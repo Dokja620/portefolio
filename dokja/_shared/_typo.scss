@@ -1,0 +1,26 @@
+// fonts importation
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@mixin outfit($weight: 200) {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+/* Typo */
+h1{
+    font-size: 2em;
+}
+h1, span{
+    @include outfit(500);
+}
+h2{
+    @include outfit(400);
+}
+h3{
+    @include outfit(350);
+}
+p{
+    @include outfit(300);
+}
