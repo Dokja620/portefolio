@@ -44,7 +44,7 @@ p {
 
 body {
   font-size: 16px;
-  background: url(/assets/imgs/main-bg.png) right/cover no-repeat;
+  background: url(../../assets/imgs/main-bg.png) right/cover no-repeat;
   color: #fff;
   position: relative;
 }
