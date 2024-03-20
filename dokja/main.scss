@@ -12,7 +12,7 @@ main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    height: calc(100lvh - 150px);
+    min-height: calc(100lvh - 150px);
 
     section {
         width: max-content;
