@@ -8,6 +8,9 @@
     <meta name="author" content="Axel RAKOTOARIVAO">
     <meta name="description" content="Je suis Axel RAKOTOARIVAO, un développeur Frontend spécialisé dans la conception de sites web captivants. J'utilise des technologies telles que Alpine.js, React JS et Qwik pour créer des expériences utilisateur fluides et des interfaces intuitives, visant à élever les normes d'engagement et de qualité. N'hésitez pas à me contacter pour en savoir plus.">
     <link rel="shortcut icon" href="assets/imgs/mugen-dev.webp" type="image/x-icon">
+    <!-- JS -->
+    <script src="assets/scripts/site.js" defer></script>
+    
     <!-- website img preview from sharing links -->
     <!-- LinkedIn -->
     <meta property="linkedin:title" content="Thumbnail example">
@@ -40,8 +43,8 @@
 
 <header>
     <div class="logo">
-        <img class="back-logo" src="assets/imgs/header/mugen-001.png" alt="logo mugen dev." height="75px" width="75px">
-        <img class="front-logo" src="assets/imgs/header/mugen-000.png" alt="logo mugen dev." height="75px" width="75px">
+        <img class="back-logo" src="assets/imgs/header/mugen-001.webp" alt="logo mugen dev." height="75px" width="75px">
+        <img class="front-logo" src="assets/imgs/header/mugen-000.webp" alt="logo mugen dev." height="75px" width="75px">
     </div>
 
     <div class="language">
@@ -105,17 +108,23 @@
         <div class="name">
             <h1>Portefolio</h1>
         </div>
-        <div class="switch-field">
-            <div class="option first">
+        <div id="change" class="switch-field">
+            <div class="option first active">
                 <h3>HTML - CSS - JS</h3>
             </div>
             <div class="separation"></div>
-            <div class="option second">
+            <div class="option second inactive">
                 <h3>React JS</h3>
             </div>
         </div>
-        <div class="navigation">
-            
+        <div id="menu" class="navigation">
+            <div id="menu-items">
+                <div class="menu-item html"><p class="sub">Batman</p></div>
+                <div class="menu-item html"><p class="sub">Black Panther</p></div>
+                <div class="menu-item html"><p class="sub">Spider-man</p></div>
+                <div class="menu-item react"><p class="sub">Superman</p></div>
+                <div class="menu-item react"><p class="sub">Vacance Nosy be Tour</p></div>
+            </div>
         </div>
     </div>
 </section>

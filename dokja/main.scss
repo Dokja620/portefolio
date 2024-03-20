@@ -21,7 +21,8 @@
 // Body
 body{
     font-size: 16px;
-    background: url(../../assets/imgs/main-bg.png) right/cover no-repeat;
+    background: url(../../assets/imgs/main-bg.webp) right/cover no-repeat;
+    min-height: 100vh;
     color: #fff;
     position: relative;
     &::after{
@@ -60,6 +61,7 @@ header{
 main{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     height: calc(100vh - 150px);
     section{
         width: max-content;
@@ -81,12 +83,13 @@ main{
         gap: 1.25em;
         div{
             height: 40px;
+            width: max-content;
             @include box();
             padding: 5px;
         }
         img{
             height: 100%;
-            width: max-content;
+            width: auto;
             margin: 0 5px;
         }
     }
@@ -112,9 +115,10 @@ main{
 // portefolio
 
 #portefolio{
+    color: #8695E4;
     .sector{
         @include box(#070913a2, 15px);
-        padding: 5px;
+        padding: 10px 15px;
     }
 
     .switch-field{
@@ -133,10 +137,59 @@ main{
     }
 
     .option{
-        @include box(#70707046, );
+        height: 35px;
         padding: .3em .7em;
+        text-align: center;
         width: 200px;
-        text-align: center
+        transition: 150ms all ease-in-out 150ms;
+        cursor: pointer;
+        &.active{
+            @include box(#70707046, );
+        }
+    }
+
+    #change[data-active-index="0"] > .second{
+            background: none;
+            border: none;
+            opacity: .5;
+    }
+    #change[data-active-index="1"] > .first{
+            background: none;
+            border: none;
+            opacity: .5;
+    }
+    #change[data-active-index="1"] > .second{
+            @include box(#70707046, );
+    }
+    #change[data-active-index="1"] *.react{
+        display: none;
+    }
+
+    .navigation{
+        margin: 5px 5px 20px 25px;
+    }
+
+    .menu-item{
+        width: max-content;
+        cursor: pointer;
+        transition: 250ms all ease;
+        p{
+            font-size: 1.3em;
+            line-height: 50px;
+        }
+    }
+
+    // Project menu hover
+    #menu-items{
+        height: max-content;
+        width: max-content;
+    }
+    #menu-items:hover > .menu-item{
+        opacity: .5;
+    }
+    #menu-items:hover > .menu-item:hover{
+        opacity: 1;
+        translate: 10px;
     }
 }
 

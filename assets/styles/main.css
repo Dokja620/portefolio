@@ -44,7 +44,8 @@ p {
 
 body {
   font-size: 16px;
-  background: url(../../assets/imgs/main-bg.png) right/cover no-repeat;
+  background: url(../../assets/imgs/main-bg.webp) right/cover no-repeat;
+  min-height: 100vh;
   color: #fff;
   position: relative;
 }
@@ -81,6 +82,7 @@ header .language img {
 main {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   height: calc(100vh - 150px);
 }
 main section {
@@ -100,6 +102,7 @@ main section {
 }
 #content .use div {
   height: 40px;
+  width: max-content;
   background: rgba(28, 4, 34, 0.3647058824);
   backdrop-filter: blur(2px);
   border-radius: 10px;
@@ -108,7 +111,7 @@ main section {
 }
 #content .use img {
   height: 100%;
-  width: max-content;
+  width: auto;
   margin: 0 5px;
 }
 #content .want-more {
@@ -131,12 +134,15 @@ main section {
   margin-right: 5px;
 }
 
+#portefolio {
+  color: #8695E4;
+}
 #portefolio .sector {
   background: rgba(7, 9, 19, 0.6352941176);
   backdrop-filter: blur(2px);
   border-radius: 15px;
   border: 1px solid #707070;
-  padding: 5px;
+  padding: 10px 15px;
 }
 #portefolio .switch-field {
   display: flex;
@@ -155,13 +161,60 @@ main section {
   margin: 0 5px;
 }
 #portefolio .option {
+  height: 35px;
+  padding: 0.3em 0.7em;
+  text-align: center;
+  width: 200px;
+  transition: 150ms all ease-in-out 150ms;
+  cursor: pointer;
+}
+#portefolio .option.active {
   background: rgba(112, 112, 112, 0.2745098039);
   backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid #707070;
-  padding: 0.3em 0.7em;
-  width: 200px;
-  text-align: center;
+}
+#portefolio #change[data-active-index="0"] > .second {
+  background: none;
+  border: none;
+  opacity: 0.5;
+}
+#portefolio #change[data-active-index="1"] > .first {
+  background: none;
+  border: none;
+  opacity: 0.5;
+}
+#portefolio #change[data-active-index="1"] > .second {
+  background: rgba(112, 112, 112, 0.2745098039);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  border: 1px solid #707070;
+}
+#portefolio #change[data-active-index="1"] *.react {
+  display: none;
+}
+#portefolio .navigation {
+  margin: 5px 5px 20px 25px;
+}
+#portefolio .menu-item {
+  width: max-content;
+  cursor: pointer;
+  transition: 250ms all ease;
+}
+#portefolio .menu-item p {
+  font-size: 1.3em;
+  line-height: 50px;
+}
+#portefolio #menu-items {
+  height: max-content;
+  width: max-content;
+}
+#portefolio #menu-items:hover > .menu-item {
+  opacity: 0.5;
+}
+#portefolio #menu-items:hover > .menu-item:hover {
+  opacity: 1;
+  translate: 10px;
 }
 
 footer div {
