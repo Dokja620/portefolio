@@ -46,7 +46,7 @@ p {
 /* Define styles for different background indexes */
 body[bg-index="1"] {
   background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat;
-  height: 100dvh;
+  min-height: 100lvh;
 }
 body[bg-index="1"]::after {
   opacity: 0;
@@ -54,7 +54,7 @@ body[bg-index="1"]::after {
 
 body[bg-index="2"] {
   background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat;
-  height: 100dvh;
+  min-height: 100lvh;
 }
 body[bg-index="2"]::after {
   opacity: 0;
@@ -62,7 +62,7 @@ body[bg-index="2"]::after {
 
 body[bg-index="3"] {
   background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat;
-  height: 100dvh;
+  min-height: 100lvh;
 }
 body[bg-index="3"]::after {
   opacity: 0;
@@ -71,7 +71,7 @@ body[bg-index="3"]::after {
 body {
   background: url(../../assets/imgs/main-bg.webp) 90% center/cover no-repeat;
   font-size: 16px;
-  min-height: 100dvh;
+  min-height: 100lvh;
   color: #fff;
   position: relative;
   transition: 0.5s all ease;
@@ -82,7 +82,7 @@ body::after {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100dvh;
+  min-height: 100lvh;
   background: rgba(7, 9, 19, 0.6352941176);
   backdrop-filter: hue-rotate(20deg);
   z-index: -1;
@@ -121,7 +121,7 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100dvh - 150px);
+  height: calc(100lvh - 150px);
 }
 main section {
   width: max-content;
