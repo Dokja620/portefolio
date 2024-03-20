@@ -1,0 +1,25 @@
+header{
+    padding: 15px 15px 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo{
+        position: relative;
+        cursor: pointer;
+        .back-logo{
+            transition: .75s all ease-in;
+            scale: .9;
+        }
+        &:hover > .back-logo{
+            transform: rotate(90deg);
+        }
+    }
+    .front{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .language img{
+        cursor: pointer;
+    }
+}

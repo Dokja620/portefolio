@@ -1,14 +1,4 @@
-/* reset */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  font-weight: normal;
-}
-
 /* Typo */
 h1 {
   font-size: 2em;
@@ -42,24 +32,35 @@ p {
   font-style: normal;
 }
 
+/* Reset and main style */
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+
 /* Define styles for different background indexes */
-body[bg-index="0"] {
+body[bg-index="1"] {
   background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat;
   height: 100dvh;
 }
 
-body[bg-index="1"] {
+body[bg-index="2"] {
   background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat;
   height: 100dvh;
 }
 
-body[bg-index="2"] {
+body[bg-index="3"] {
   background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat;
   height: 100dvh;
 }
 
 body {
-  background: url(../../assets/imgs/main-bg.webp) right/cover no-repeat;
+  background: url(../../assets/imgs/main-bg.webp) 90% center/cover no-repeat;
   font-size: 16px;
   min-height: 100dvh;
   color: #fff;
@@ -75,8 +76,16 @@ header {
 }
 header .logo {
   position: relative;
+  cursor: pointer;
 }
-header .front-logo {
+header .logo .back-logo {
+  transition: 0.75s all ease-in;
+  scale: 0.9;
+}
+header .logo:hover > .back-logo {
+  transform: rotate(90deg);
+}
+header .front {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,17 +94,21 @@ header .language img {
   cursor: pointer;
 }
 
+/* main */
 main {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   height: calc(100dvh - 150px);
 }
 main section {
   width: max-content;
-  max-width: 50%;
 }
 
+#content {
+  max-width: 455px;
+}
 #content .text {
   width: 55ch;
   text-align: justify;
@@ -142,6 +155,7 @@ main section {
 
 #portefolio {
   color: #8695E4;
+  max-width: 405px;
 }
 #portefolio .sector {
   background: rgba(7, 9, 19, 0.6352941176);
@@ -208,16 +222,72 @@ main section {
   padding-left: 10px;
 }
 
-footer div {
+/* Footer */
+.social-media {
   display: flex;
   gap: 5px;
   width: max-content;
   margin: 0 auto;
+}
+.social-media div {
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  height: 35px;
+  width: 35px;
   border-radius: 12px;
+  transition: 0.25s all ease-in-out 0.25s;
+}
+.social-media div.gmail {
+  background: #fff;
+}
+.social-media div.gmail a {
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.6117647059);
+}
+.social-media div.gmail:hover {
+  width: 254px;
+}
+.social-media div.whatsapp {
+  background: #fff;
+}
+.social-media div.whatsapp a {
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.6117647059);
+}
+.social-media div.whatsapp:hover {
+  width: 187px;
+}
+.social-media div.linkedin {
+  background: #0077b5;
+}
+.social-media div.linkedin a {
+  color: #fff;
+  border-color: #fff;
+}
+.social-media div.linkedin:hover {
+  width: 243px;
+}
+.social-media div.github {
+  background: #000;
+}
+.social-media div.github a {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6117647059);
+}
+.social-media div.github:hover {
+  width: 208px;
+}
+.social-media div a {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  padding: 0 10px 0 10px;
+  border-left: 2px solid;
 }
 
-/* responsive */
+/* Responsive */
 /*Desktop First*/
 .container {
   max-width: 1536px;

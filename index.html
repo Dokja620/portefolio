@@ -43,11 +43,12 @@
 <body>
 
 <header>
-    <div class="logo">
+    <div class="logo" onclick="changeBackground(0)">
         <img class="back-logo" src="assets/imgs/header/mugen-001.webp" alt="logo mugen dev." height="75px" width="75px">
-        <img class="front-logo" src="assets/imgs/header/mugen-000.webp" alt="logo mugen dev." height="75px" width="75px">
+        <div class="front">
+            <img src="assets/imgs/header/mugen-000.webp" alt="logo mugen dev." height="75px" width="75px">
+        </div>
     </div>
-
     <div class="language">
         <img src="assets/imgs/nav/flag-fr.svg" alt="french flag" width="42px" height="30px">
         <img src="assets/imgs/nav/flag-us.svg" alt="french flag" width="42px" height="30px">
@@ -72,19 +73,19 @@
     <h2>Tech Stack :</h2>
     <div class="use">
         <div class="core-web">
-            <img src="assets/imgs/techs/html-5.svg" alt="icon html" height="40px" width="35px">
-            <img src="assets/imgs/techs/css-3.svg" alt="icon css" height="40px" width="35px">
-            <img src="assets/imgs/techs/javascript.svg" alt="icon js" height="40px" width="35px">
+            <img src="assets/imgs/techs/html-5.svg" title="html" alt="icon html" height="40px" width="35px">
+            <img src="assets/imgs/techs/css-3.svg" title="css" alt="icon css" height="40px" width="35px">
+            <img src="assets/imgs/techs/javascript.svg" title="javascript" alt="icon js" height="40px" width="35px">
         </div>
         <div class="framework">
-            <img src="assets/imgs/techs/react-js.svg" alt="icon react js" width="45px" height="40px">
-            <img src="assets/imgs/techs/qwik.svg" alt="icon qwik" width="37px" height="40px">
-            <img src="assets/imgs/techs/alpine-js.svg" alt="icon alpine js" width="87px" height="40px">
+            <img src="assets/imgs/techs/react-js.svg" title="ReactJS" alt="icon react js" width="45px" height="40px">
+            <img src="assets/imgs/techs/qwik.svg" title="Qwik"alt="icon qwik" width="37px" height="40px">
+            <img src="assets/imgs/techs/alpine-js.svg" title="AlpineJS" alt="icon alpine js" width="87px" height="40px">
         </div>
         <div class="tools">
-            <img src="assets/imgs/techs/git.svg" alt="icon git" width="40px" height="40px">
-            <img src="assets/imgs/techs/gulp.svg" alt="icon gulp" width="18px" height="40px">
-            <img src="assets/imgs/techs/sass.svg" alt="icon sass" width="53px" height="40px">
+            <img src="assets/imgs/techs/git.svg" title="Git" alt="icon git" width="40px" height="40px">
+            <img src="assets/imgs/techs/gulp.svg" title="Gulp" alt="icon gulp" width="18px" height="40px">
+            <img src="assets/imgs/techs/sass.svg" title="Sass" alt="icon sass" width="53px" height="40px">
         </div>
     </div>
     
@@ -122,10 +123,10 @@
         </div> -->
         <div id="menu" class="navigation">
             <div id="menu-items">
-                <div class="menu-item" onclick="changeBackground(0)"><p class="sub">Batman</p><span>00/00/000</span></div>
-                <div class="menu-item" onclick="changeBackground(1)"><p class="sub">Black Panther</p><span>00/00/000</span></div>
-                <div class="menu-item" onclick="changeBackground(2)"><p class="sub">Superman</p><span>00/00/000</span></div>
-                <div class="menu-item" onclick="changeBackground(4)"><p class="sub">Vacance Nosy be Tour</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(1)"><p class="sub">Batman</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(2)"><p class="sub">Black Panther</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(3)"><p class="sub">Superman</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(0)"><p class="sub">Vacance Nosy be Tour</p><span>00/00/000</span></div>
             </div>
             </div>
         </div>
@@ -136,10 +137,10 @@
 
 <footer>
      <div class="social-media"> <!-- // TODO change those all should look great like gmail -->
-        <div class="whatsapp"><img src="assets/imgs/footer/linkedin.svg" alt="icon linkedin" width="35px" height="35px"></div>
-        <div class="whatsapp"><img src="assets/imgs/footer/whatsapp.svg" alt="icon whatsapp" width="35px" height="35px"></div>
-        <div class="whatsapp"><img src="assets/imgs/footer/gmail.svg" alt="icon gmail" width="35px" height="35px"></div>
-        <div class="whatsapp"><img src="assets/imgs/footer/github.svg" alt="icon github" width="35px" height="35px"></div>
+        <div class="gmail"><img src="assets/imgs/footer/gmail.svg" alt="icon gmail" width="35px" height="35px"><a href="@">revanamike620@gmail.com</a></div>
+        <div class="whatsapp"><img src="assets/imgs/footer/whatsapp.svg" alt="icon whatsapp" width="35px" height="35px"><a href="@">api.whatsapp.axel</a></div>
+        <div class="linkedin"><img src="assets/imgs/footer/linkedin.svg" alt="icon linkedin" width="35px" height="35px"><a href="@">linkedin.com/in/diary-axel</a></div>
+        <div class="github"><img src="assets/imgs/footer/github.svg" alt="icon github" width="35px" height="35px"><a href="@">github.com/dokja620</a></div>
     </div>
 </footer>
 </body>

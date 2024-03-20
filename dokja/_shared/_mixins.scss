@@ -1,0 +1,7 @@
+// Mixins
+@mixin box($bg: #1c04225d, $bora: 10px) {
+    background: $bg;
+    backdrop-filter: blur(3px);
+    border-radius: $bora;
+    border: 1px solid #707070;
+}

@@ -1,0 +1,62 @@
+// footer
+.social-media {
+    display: flex;
+    gap: 5px;
+    width: max-content;
+    margin: 0 auto;
+    div{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        height: 35px;
+        width: 35px;
+        border-radius: 12px;
+        transition: .25s all ease-in-out .25s;
+        &.gmail{
+            background: #fff;
+            a{
+                color: #000;
+                border-color: #0000009c;
+            }
+            &:hover{
+                width: 254px;
+            }
+        }
+        &.whatsapp{
+            background: #fff;
+            a{
+                color: #000;
+                border-color: #0000009c;
+            }
+            &:hover{
+                width: 187px;
+            }
+        }
+        &.linkedin{
+            a{
+                color: #fff;
+                border-color: #fff;
+            }
+            background: #0077b5;
+            &:hover{
+                width: 243px;
+            }
+        }
+        &.github{
+            a{
+                color: #fff;
+                border-color: #ffffff9c;
+            }
+            background: #000;
+            &:hover{
+                width: 208px;
+            }
+        }
+        a{
+            @include outfit(300);
+            padding: 0 10px 0 10px;
+            border-left: 2px solid;
+        }
+        // hover
+    }
+}

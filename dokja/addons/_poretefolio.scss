@@ -1,0 +1,76 @@
+// portefolio
+#portefolio {
+    color: #8695E4;
+    max-width: 405px;
+    .sector {
+        @include box(#070913a2, 15px);
+        overflow: hidden;
+    }
+
+    .name {
+        border-bottom: 1px solid #707070;
+        background: #1c04225d;
+        border-radius: 12px 12px 0 0;
+        width: 100%;
+        padding: 0 10px;
+        min-width: 400px;
+
+        h1 {
+            color: 070913;
+        }
+    }
+
+    .option {
+        height: 35px;
+        padding: .3em .7em;
+        text-align: center;
+        width: 200px;
+        transition: 150ms all ease-in-out 150ms;
+        cursor: pointer;
+
+        &.active {
+            @include box(#70707046, );
+        }
+    }
+
+    .navigation {
+        margin: 5px 5px 15px 25px;
+    }
+
+    .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        transition: 250ms all ease;
+        position: relative;
+
+        p {
+            font-size: 1.3em;
+            line-height: 50px;
+            transition: 250ms all ease;
+        }
+
+        span {
+            margin-right: 10px;
+        }
+    }
+
+    // Project menu hover
+    #menu-items {
+        height: max-content;
+    }
+
+    #menu-items:hover>.menu-item {
+        opacity: .3;
+    }
+
+    #menu-items:hover>.menu-item:hover {
+        opacity: 1;
+
+        p {
+            padding-left: 10px;
+        }
+    }
+}

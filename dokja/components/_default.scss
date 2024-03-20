@@ -1,0 +1,46 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Define styles for different background indexes */
+body[bg-index="1"] {
+    background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat;
+    height: 100dvh;
+}
+
+body[bg-index="2"] {
+    background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat;
+    height: 100dvh;
+}
+
+body[bg-index="3"] {
+    background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat;
+    height: 100dvh;
+}
+
+// Body
+body {
+    background: url(../../assets/imgs/main-bg.webp) 90% center/cover no-repeat;
+    font-size: 16px;
+    min-height: 100dvh;
+    color: #fff;
+    position: relative;
+    transition: .5s all ease;
+    // &::after{
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100vw;
+    //     height: 100dvh;
+    //     background: #070913a2;
+    //     backdrop-filter: hue-rotate(20deg);
+    //     z-index: -1;
+    // }
+}

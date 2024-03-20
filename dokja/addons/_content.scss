@@ -1,0 +1,47 @@
+// First the content section
+#content {
+    max-width: 455px;
+    .text {
+        width: 55ch;
+        text-align: justify;
+        margin-bottom: 15px;
+    }
+
+    .use {
+        display: flex;
+        margin: 10px 0 15px 0;
+        gap: 1.25em;
+
+        div {
+            height: 40px;
+            width: max-content;
+            @include box();
+            padding: 5px;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+            margin: 0 5px;
+        }
+    }
+
+    .want-more {
+        display: flex;
+        justify-content: center;
+
+        div {
+            @include box(#70707046, 10px);
+            padding: 1px 5px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+
+            p {
+                margin-right: 5px;
+            }
+        }
+    }
+}
