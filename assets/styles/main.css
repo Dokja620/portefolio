@@ -79,7 +79,7 @@ body {
 }
 body::after {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -245,6 +245,10 @@ main section {
 }
 
 /* Footer */
+footer {
+  padding: 50px 0;
+}
+
 .social-media {
   display: flex;
   flex-wrap: wrap;
