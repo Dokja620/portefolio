@@ -12,16 +12,25 @@
 body[bg-index="1"] {
     background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat;
     height: 100dvh;
+    &::after{
+        opacity: 0;
+    }
 }
 
 body[bg-index="2"] {
     background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat;
     height: 100dvh;
+    &::after{
+        opacity: 0;
+    }
 }
 
 body[bg-index="3"] {
     background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat;
     height: 100dvh;
+    &::after{
+        opacity: 0;
+    }
 }
 
 // Body
@@ -32,15 +41,16 @@ body {
     color: #fff;
     position: relative;
     transition: .5s all ease;
-    // &::after{
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100vw;
-    //     height: 100dvh;
-    //     background: #070913a2;
-    //     backdrop-filter: hue-rotate(20deg);
-    //     z-index: -1;
-    // }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        background: #070913a2;
+        backdrop-filter: hue-rotate(20deg);
+        z-index: -1;
+        transition: .25s all ease-in-out;
+    }
 }

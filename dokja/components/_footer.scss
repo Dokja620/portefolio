@@ -1,6 +1,7 @@
 // footer
 .social-media {
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     width: max-content;
     margin: 0 auto;
@@ -11,36 +12,24 @@
         height: 35px;
         width: 35px;
         border-radius: 12px;
-        transition: .25s all ease-in-out .25s;
-        &.gmail{
-            background: #fff;
-            a{
-                color: #000;
-                border-color: #0000009c;
-            }
-            &:hover{
-                width: 254px;
-            }
+        transition: .5s width ease-in-out .25s;
+        cursor: pointer;
+        a{
+            min-width: max-content;
         }
-        &.whatsapp{
+        &.gmail, &.whatsapp{
             background: #fff;
             a{
                 color: #000;
                 border-color: #0000009c;
-            }
-            &:hover{
-                width: 187px;
             }
         }
         &.linkedin{
             a{
                 color: #fff;
-                border-color: #fff;
+                border-color: #ffffff9c;
             }
             background: #0077b5;
-            &:hover{
-                width: 243px;
-            }
         }
         &.github{
             a{
@@ -48,15 +37,24 @@
                 border-color: #ffffff9c;
             }
             background: #000;
-            &:hover{
-                width: 208px;
-            }
         }
         a{
             @include outfit(300);
             padding: 0 10px 0 10px;
             border-left: 2px solid;
         }
-        // hover
     }
+}
+
+#foot[data-active-index="0"] > .gmail{
+    width: 254px;
+}
+#foot[data-active-index="1"] > .whatsapp{
+    width: 187px;
+}
+#foot[data-active-index="2"] > .linkedin{
+    width: 241px;
+}
+#foot[data-active-index="3"] > .github{
+    width: 209px;
 }

@@ -48,15 +48,24 @@ body[bg-index="1"] {
   background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat;
   height: 100dvh;
 }
+body[bg-index="1"]::after {
+  opacity: 0;
+}
 
 body[bg-index="2"] {
   background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat;
   height: 100dvh;
 }
+body[bg-index="2"]::after {
+  opacity: 0;
+}
 
 body[bg-index="3"] {
   background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat;
   height: 100dvh;
+}
+body[bg-index="3"]::after {
+  opacity: 0;
 }
 
 body {
@@ -66,6 +75,18 @@ body {
   color: #fff;
   position: relative;
   transition: 0.5s all ease;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: rgba(7, 9, 19, 0.6352941176);
+  backdrop-filter: hue-rotate(20deg);
+  z-index: -1;
+  transition: 0.25s all ease-in-out;
 }
 
 header {
@@ -225,6 +246,7 @@ main section {
 /* Footer */
 .social-media {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   width: max-content;
   margin: 0 auto;
@@ -236,37 +258,25 @@ main section {
   height: 35px;
   width: 35px;
   border-radius: 12px;
-  transition: 0.25s all ease-in-out 0.25s;
+  transition: 0.5s width ease-in-out 0.25s;
+  cursor: pointer;
 }
-.social-media div.gmail {
+.social-media div a {
+  min-width: max-content;
+}
+.social-media div.gmail, .social-media div.whatsapp {
   background: #fff;
 }
-.social-media div.gmail a {
+.social-media div.gmail a, .social-media div.whatsapp a {
   color: #000;
   border-color: rgba(0, 0, 0, 0.6117647059);
-}
-.social-media div.gmail:hover {
-  width: 254px;
-}
-.social-media div.whatsapp {
-  background: #fff;
-}
-.social-media div.whatsapp a {
-  color: #000;
-  border-color: rgba(0, 0, 0, 0.6117647059);
-}
-.social-media div.whatsapp:hover {
-  width: 187px;
 }
 .social-media div.linkedin {
   background: #0077b5;
 }
 .social-media div.linkedin a {
   color: #fff;
-  border-color: #fff;
-}
-.social-media div.linkedin:hover {
-  width: 243px;
+  border-color: rgba(255, 255, 255, 0.6117647059);
 }
 .social-media div.github {
   background: #000;
@@ -275,9 +285,6 @@ main section {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.6117647059);
 }
-.social-media div.github:hover {
-  width: 208px;
-}
 .social-media div a {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -285,6 +292,78 @@ main section {
   font-style: normal;
   padding: 0 10px 0 10px;
   border-left: 2px solid;
+}
+
+#foot[data-active-index="0"] > .gmail {
+  width: 254px;
+}
+
+#foot[data-active-index="1"] > .whatsapp {
+  width: 187px;
+}
+
+#foot[data-active-index="2"] > .linkedin {
+  width: 241px;
+}
+
+#foot[data-active-index="3"] > .github {
+  width: 209px;
+}
+
+/* custom cursor */
+.js-cursor {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  margin: -20px 0 0 -20px;
+  mix-blend-mode: difference;
+  transition-duration: 0.4s;
+  transition-property: visibility, opacity;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.js-cursor:before, .js-cursor:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 50%;
+}
+.js-cursor:before {
+  height: 8px;
+  width: 8px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.js-cursor:after {
+  height: 20px;
+  width: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition-duration: 0.4s;
+  transition-property: border-color, background, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js-cursor.is-active {
+  opacity: 1;
+  visibility: visible;
+  will-change: transform;
+}
+.js-cursor.is-focus:after {
+  transform: translate3d(-50%, -50%, 0) scale(2);
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.2);
+}
+.js-cursor.is-hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* Responsive */
@@ -329,5 +408,25 @@ main section {
 @media (max-width: 475px) {
   .container {
     width: 100%;
+  }
+  #content {
+    width: 100%;
+    min-width: 250px;
+    padding: 25px;
+  }
+  #content h1 {
+    font-size: clamp(1.4em, 85vw, 1.7em);
+  }
+  #content .text {
+    width: 100%;
+  }
+  #content .use {
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+  }
+  #portefolio {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 75px;
   }
 }
