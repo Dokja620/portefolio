@@ -42,23 +42,29 @@ p {
   font-style: normal;
 }
 
+/* Define styles for different background indexes */
+body[bg-index="0"] {
+  background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat;
+  height: 100dvh;
+}
+
+body[bg-index="1"] {
+  background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat;
+  height: 100dvh;
+}
+
+body[bg-index="2"] {
+  background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat;
+  height: 100dvh;
+}
+
 body {
-  font-size: 16px;
   background: url(../../assets/imgs/main-bg.webp) right/cover no-repeat;
-  min-height: 100vh;
+  font-size: 16px;
+  min-height: 100dvh;
   color: #fff;
   position: relative;
-}
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(7, 9, 19, 0.6352941176);
-  backdrop-filter: hue-rotate(20deg);
-  z-index: -1;
+  transition: 0.5s all ease;
 }
 
 header {
@@ -83,7 +89,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100vh - 150px);
+  height: calc(100dvh - 150px);
 }
 main section {
   width: max-content;
@@ -104,7 +110,7 @@ main section {
   height: 40px;
   width: max-content;
   background: rgba(28, 4, 34, 0.3647058824);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid #707070;
   padding: 5px;
@@ -120,7 +126,7 @@ main section {
 }
 #content .want-more div {
   background: rgba(112, 112, 112, 0.2745098039);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid #707070;
   padding: 1px 5px;
@@ -139,26 +145,21 @@ main section {
 }
 #portefolio .sector {
   background: rgba(7, 9, 19, 0.6352941176);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   border-radius: 15px;
   border: 1px solid #707070;
-  padding: 10px 15px;
+  overflow: hidden;
 }
-#portefolio .switch-field {
-  display: flex;
-  align-items: center;
+#portefolio .name {
+  border-bottom: 1px solid #707070;
   background: rgba(28, 4, 34, 0.3647058824);
-  backdrop-filter: blur(2px);
-  border-radius: 10px;
-  border: 1px solid #707070;
-  padding: 5px;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  padding: 0 10px;
+  min-width: 400px;
 }
-#portefolio .separation {
-  width: 2px;
-  border-radius: 2px;
-  height: 30px;
-  background: #707070;
-  margin: 0 5px;
+#portefolio .name h1 {
+  color: 70913;
 }
 #portefolio .option {
   height: 35px;
@@ -170,51 +171,41 @@ main section {
 }
 #portefolio .option.active {
   background: rgba(112, 112, 112, 0.2745098039);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid #707070;
-}
-#portefolio #change[data-active-index="0"] > .second {
-  background: none;
-  border: none;
-  opacity: 0.5;
-}
-#portefolio #change[data-active-index="1"] > .first {
-  background: none;
-  border: none;
-  opacity: 0.5;
-}
-#portefolio #change[data-active-index="1"] > .second {
-  background: rgba(112, 112, 112, 0.2745098039);
-  backdrop-filter: blur(2px);
-  border-radius: 10px;
-  border: 1px solid #707070;
-}
-#portefolio #change[data-active-index="1"] *.react {
-  display: none;
 }
 #portefolio .navigation {
-  margin: 5px 5px 20px 25px;
+  margin: 5px 5px 15px 25px;
 }
 #portefolio .menu-item {
-  width: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   cursor: pointer;
   transition: 250ms all ease;
+  position: relative;
 }
 #portefolio .menu-item p {
   font-size: 1.3em;
   line-height: 50px;
+  transition: 250ms all ease;
+}
+#portefolio .menu-item span {
+  margin-right: 10px;
 }
 #portefolio #menu-items {
   height: max-content;
-  width: max-content;
 }
 #portefolio #menu-items:hover > .menu-item {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 #portefolio #menu-items:hover > .menu-item:hover {
   opacity: 1;
-  translate: 10px;
+}
+#portefolio #menu-items:hover > .menu-item:hover p {
+  padding-left: 10px;
 }
 
 footer div {

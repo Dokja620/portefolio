@@ -5,13 +5,9 @@ Array.from(document.getElementsByClassName("menu-item"))
     item.onmouseover = () => {
       menu.dataset.activeIndex = index;
     }
-  });
+});
 
-const change = document.getElementById("change");
-
-Array.from(document.getElementsByClassName("option"))
-  .forEach((item, index) => {
-    item.onmouseover = () => {
-      change.dataset.activeIndex = index;
-    }
-  });
+function changeBackground(index) {
+  // Set the background index attribute of the body element
+  document.body.setAttribute('bg-index', index);
+}
