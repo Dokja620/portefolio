@@ -11,7 +11,7 @@
 /* Define styles for different background indexes */
 body[bg-index="1"] {
     background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat;
-    min-height: 100lvh;
+    height: 100lvh;
     &::after{
         opacity: 0;
     }
@@ -19,7 +19,7 @@ body[bg-index="1"] {
 
 body[bg-index="2"] {
     background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat;
-    min-height: 100lvh;
+    height: 100lvh;
     &::after{
         opacity: 0;
     }
@@ -27,7 +27,7 @@ body[bg-index="2"] {
 
 body[bg-index="3"] {
     background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat;
-    min-height: 100lvh;
+    height: 100lvh;
     &::after{
         opacity: 0;
     }
@@ -36,8 +36,9 @@ body[bg-index="3"] {
 // Body
 body {
     background: url(../../assets/imgs/main-bg.webp) 90% center/cover no-repeat;
+    background-attachment: fixed;
     font-size: 16px;
-    min-height: 100lvh;
+    height: 100lvh;
     color: #fff;
     position: relative;
     transition: .5s all ease;
@@ -47,7 +48,7 @@ body {
         top: 0;
         left: 0;
         width: 100vw;
-        min-height: 100lvh;
+        height: 100lvh;
         background: #070913a2;
         backdrop-filter: hue-rotate(20deg);
         z-index: -1;
