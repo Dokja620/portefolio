@@ -1,9 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
   // After page is loaded, wait for 1 second and hide the loader
   setTimeout(function () {
-      document.querySelector('.loader').classList.add('hidden');
-  }, 2000);
+    const loader = document.querySelector('.loader');
+    loader.classList.add('hidden');
+
+    // After 2200 milliseconds of hiding the loader, add the .close class
+    setTimeout(function () {
+      // Add .close class after a delay of 250 milliseconds
+      setTimeout(function () {
+        loader.classList.add('close');
+      }, 250);
+    }, 2200);
+  }, 2200); // Initial timeout for hiding the loader
 });
+
+
 
 function handleMouseEvents(containerId, itemClass, datasetName) {
   const container = document.getElementById(containerId);

@@ -5,6 +5,8 @@ header{
     justify-content: space-between;
     .logo{
         position: relative;
+        width: 75px;
+        height: 75px;
         cursor: pointer;
         .back-logo{
             transition: .75s all ease-in;
@@ -12,6 +14,10 @@ header{
         }
         &:hover > .back-logo{
             transform: rotate(90deg);
+        }
+        img{
+            width: 100%;
+            height: 100%;
         }
     }
     .front{
