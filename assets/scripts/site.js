@@ -21,11 +21,34 @@ function handleMouseEvents(containerId, itemClass, datasetName) {
 handleMouseEvents("menu", "menu-item", "activeIndex");
 handleMouseEvents("foot", "foot-item", "activeIndex");
 
-
-
 function changeBackground(index) {
   // Set the background index attribute of the body element
   document.body.setAttribute('bg-index', index);
+}
+
+// Function to start the background loop with a delay between iterations
+function startBackgroundLoop() {
+  // Define the maximum index
+  var maxIndex = 10; // Change this to the desired maximum index
+
+  // Start the loop with an initial index of 0
+  loopWithDelay(0);
+
+  // Function to loop through indices with a delay
+  function loopWithDelay(index) {
+    // Call the changeBackground function with the current index
+    changeBackground(index);
+
+    // Check if it's the last index, if so, stop the loop
+    if (index === maxIndex) {
+      return;
+    }
+
+    // Schedule the next iteration with a delay of 0.1 seconds (100 milliseconds)
+    setTimeout(function () {
+      loopWithDelay(index + 1);
+    }, 5);
+  }
 }
 
 function changeContent(index) {
@@ -33,54 +56,19 @@ function changeContent(index) {
   document.getElementById('content').setAttribute('picked-one', index);
 }
 
- // Function to preload background images defined in CSS
- function preloadBackgroundImages() {
-  var styleSheets = document.styleSheets; // Get all style sheets
-  var imageUrls = [];
-
-  // Loop through each style sheet
-  for (var i = 0; i < styleSheets.length; i++) {
-      var rules = styleSheets[i].cssRules; // Get rules of each style sheet
-
-      // Loop through each rule
-      for (var j = 0; j < rules.length; j++) {
-          var rule = rules[j];
-          if (rule.style && rule.style.backgroundImage) {
-              var backgroundImage = rule.style.backgroundImage;
-
-              // Extract the URL from background-image property
-              var urlMatch = backgroundImage.match(/url\(["']?(.*?)["']?\)/);
-              if (urlMatch) {
-                  var imageUrl = urlMatch[1];
-                  imageUrls.push(imageUrl);
-              }
-          }
-      }
-  }
-
-  // Preload images
-  for (var k = 0; k < imageUrls.length; k++) {
-      var img = new Image();
-      img.src = imageUrls[k];
-  }
-}
-
-// Call the preloadBackgroundImages function when the window loads
-window.onload = preloadBackgroundImages;
-
 //
 //マウスストーカー
 
 //requestAnimationFrameのフレームレート制限
 class LimitFlames {
   constructor(framesPerSecond) {
-    this.interval =  Math.floor(1000 / framesPerSecond);
+    this.interval = Math.floor(1000 / framesPerSecond);
     this.previousTime = performance.now();
   }
   isLimitFlames(timestamp) {
     const deltaTime = timestamp - this.previousTime;
     const isLimitOver = deltaTime <= this.interval;
-    if(!isLimitOver) {
+    if (!isLimitOver) {
       this.previousTime = timestamp - (deltaTime % this.interval);
     }
     return isLimitOver;
@@ -159,7 +147,7 @@ function cursor() {
   }
 
   // Event listener for mouse movement
-  document.addEventListener('mousemove', function(e) {
+  document.addEventListener('mousemove', function (e) {
     posi.x = e.clientX;
     posi.y = e.clientY;
 
@@ -188,11 +176,11 @@ function cursor() {
       return;
     }
     const FOCUS_CLASS = 'is-focus';
-    linkItems.forEach(function(linkItem) {
-      linkItem.addEventListener('mouseenter', function() {
+    linkItems.forEach(function (linkItem) {
+      linkItem.addEventListener('mouseenter', function () {
         addCursorClass(FOCUS_CLASS);
       });
-      linkItem.addEventListener('mouseleave', function() {
+      linkItem.addEventListener('mouseleave', function () {
         removeCursorClass(FOCUS_CLASS);
       });
     });
@@ -206,11 +194,11 @@ function cursor() {
       return;
     }
     const HIDDEN_CLASS = 'is-hidden';
-    iframeItems.forEach(function(iframeItem) {
-      iframeItem.addEventListener('mouseenter', function() {
+    iframeItems.forEach(function (iframeItem) {
+      iframeItem.addEventListener('mouseenter', function () {
         addCursorClass(HIDDEN_CLASS);
       });
-      iframeItem.addEventListener('mouseleave', function() {
+      iframeItem.addEventListener('mouseleave', function () {
         removeCursorClass(HIDDEN_CLASS);
       });
     });

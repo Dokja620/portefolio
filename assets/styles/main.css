@@ -471,7 +471,7 @@ footer p {
     padding: 25px;
   }
   #content h1 {
-    font-size: clamp(1.4em, 85vw, 1.7em);
+    font-size: clamp(1.2em, 10vw + 1em, 1.7em);
   }
   #content .text {
     width: 100%;
