@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
     };
 
     loader.addEventListener("transitionend", transitionEndHandler);
-  }, 2000);
+  }, 3000);
 });
 
 
@@ -70,6 +70,11 @@ function changeBackground(index) {
 function changeContent(index) {
   // Update the picked-one attribute of the content element
   document.getElementById('content').setAttribute('picked-one', index);
+}
+
+function callForm(index) {
+  // Update the form-folio attribute of the content element
+  document.getElementById('portefolio').setAttribute('form-folio', index);
 }
 
 //

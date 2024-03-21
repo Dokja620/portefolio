@@ -1,0 +1,87 @@
+#portefolio[form-folio="0"]>*:not(.sector){
+    display: none;
+}
+#portefolio[form-folio="1"]>*:not(form){
+    display: none;
+}
+
+form{
+    @include box(#070913a2, 15px);
+    position: relative;
+    padding: 45px 10px 10px 10px;
+    text-align: center;
+    min-width: 402px;
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: .25s transform ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    
+    .fields{
+        display: flex;
+        gap: 5px;
+        margin-bottom: 10px;
+    }    
+    .show, input{
+        border: 1px solid #707070;
+        background: #070913a2;
+        padding: 5px;
+    }
+    .show{
+        width: 75px;
+        text-align: center;
+        border-radius: 20px 10px 10px 20px;
+    }
+    input{
+        width: 100%;
+        color: #8695E4;
+        border-radius: 10px 20px 20px 10px;
+        @include outfit(300);
+        letter-spacing: 1px;
+        padding-left: 10px;
+    }
+    textarea{
+        width: 100%;
+        color: #8695E4;
+        @include box(#070913a2, 15px);
+        padding: 10px;
+        resize: none;
+        @include outfit(300);
+        letter-spacing: 1px;
+    }
+    *::placeholder{
+        color: #8696e486;
+        @include outfit(300);
+        letter-spacing: 1px;
+    }
+    input, textarea{
+        outline: 1px solid #70707046;
+            outline-offset: -2px;
+            transition: .25s outline-offset ease-in-out;
+        &:hover, &:focus {
+                outline: 1px solid #70707046;
+                outline-offset: 2px;
+        }
+    }
+    button{
+        width: max-content;
+        @include box(#070913a2, 20px);
+        @include outfit(300);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 8px 15px;
+        margin-top: 5px;
+        transition: .5s box-shadow ease-in-out;
+        cursor: pointer;
+        &:hover, &:focus{
+            box-shadow: #ffffff4f 0px 0px 12px;
+        }
+    }
+}
+

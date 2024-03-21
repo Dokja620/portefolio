@@ -23,7 +23,7 @@
           </div>
     </div>
 <header>
-    <div class="logo" onclick="changeBackground(0); changeContent(0)">
+    <div class="logo" onclick="changeBackground(0); changeContent(0); callForm(0)">
         <img loading="lazy" class="back-logo" src="assets/imgs/header/mugen-001.webp" alt="logo mugen dev." height="512px" width="512px">
         <div class="front">
             <img loading="lazy" src="assets/imgs/header/mugen-000.webp" alt="logo mugen dev." height="512px" width="512px">
@@ -41,6 +41,7 @@
         <div class="text">
             <h1 class="swap" data-hover="Dev front.">Je suis <span class="me" >Axel RAKOTOARIVAO</span></h1>
             <p>
+                Développeur Front-End
                 Spécialisé dans la conception de sites web captivants, 
                 utilisant Alpine.js, React JS et Qwik. Mon objectif 
                 principal est de créer des expériences utilisateur 
@@ -72,7 +73,7 @@
         
         <!-- reach me -->
         <div class="want-more">
-            <button class="btn reach-me">
+            <button class="btn reach-me" onclick="callForm(1)">
                 <span><img src="assets/imgs/nav/contact.svg" alt="" height="25px" width="25px"></span>
                 <p>
                     Me Contacter
@@ -84,7 +85,7 @@
             </a>
         </div>
         
-        <!-- form -->
+        
     </div>
     
     <!-- active -->
@@ -161,7 +162,7 @@
     </div>
 </section>
 
-<section id="portefolio">
+<section id="portefolio" form-folio="0">
     <div class="sector">
         <div class="name">
             <h1>Portefolio</h1>
@@ -178,6 +179,23 @@
             </div>
         </div>
     </div>
+
+    <!-- form -->
+    <form id="form" action="submit">
+        <div class="close"  onclick="callForm(0)"><img src="assets/imgs/nav/close.svg" alt="icon close" width="25px" height="25px"></div>
+        <div class="fields">
+            <div class="show"><p>Nom</p></div>
+            <input type="text" name="" id="" placeholder="..." required>
+        </div>
+        <div class="fields">
+            <div class="show"><p>Email</p></div>
+            <input type="email" name="" id="" placeholder="..." required>
+        </div>
+        <div class="message">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message..." required></textarea>
+        </div>
+        <button>Envoyer</button>
+    </form>
 </section>
 
 </main>
