@@ -1,0 +1,38 @@
+.toggled{
+    h3{
+        font-size: clamp(1.5em, 10vw, 2.5em);
+    }
+    .back{
+        cursor: pointer;
+    }
+    .btn{
+        display: flex;
+        align-items: center;
+        background: #8181810e;
+        backdrop-filter: blur(3px) brightness(200%);
+        border: 2px solid #707070;
+        width: max-content;
+        padding: .1em .9em;
+        margin: 10px 0;
+        border-radius: 25px;
+        @include outfit(200);
+        cursor: pointer;
+        span{
+            margin-left: 10px;
+            padding-top: 5px;
+        }
+    }
+}
+
+#content[picked-one="0"] > *:not(#intro){
+    display: none;
+}
+#content[picked-one="1"] > *:not(#bat){
+    display: none;
+}
+#content[picked-one="2"] > *:not(#black){
+    display: none;
+}
+#content[picked-one="3"] > *:not(#sup){
+    display: none;
+}

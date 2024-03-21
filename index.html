@@ -44,7 +44,7 @@
     <div class="js-cursor" id="js-cursor"></div>
 
 <header>
-    <div class="logo" onclick="changeBackground(0)">
+    <div class="logo" onclick="changeBackground(0); changeContent(0)">
         <img class="back-logo" src="assets/imgs/header/mugen-001.webp" alt="logo mugen dev." height="75px" width="75px">
         <div class="front">
             <img src="assets/imgs/header/mugen-000.webp" alt="logo mugen dev." height="75px" width="75px">
@@ -57,55 +57,105 @@
 </header>
 
 <main class="container">
-<section id="content">
-    <div class="text">
-        <h1>Je suis <span>Axel RAKOTOARIVAO</span></h1>
-        <p>
-            Je suis un développeur Frontend spécialisé dans la 
-            conception de sites web captivants, utilisant Alpine.js, 
-            React JS et Qwik. Mon objectif principal est de créer 
-            des expériences utilisateur fluides et des interfaces 
-            intuitives. Chaque projet que je réalise vise à élever 
-            les normes d'engagement et de qualité.
-        </p>
-    </div>
-
-    <!-- Techs I uses -->
-    <h2>Tech Stack :</h2>
-    <div class="use">
-        <div class="core-web">
-            <img src="assets/imgs/techs/html-5.svg" title="html" alt="icon html" height="40px" width="35px">
-            <img src="assets/imgs/techs/css-3.svg" title="css" alt="icon css" height="40px" width="35px">
-            <img src="assets/imgs/techs/javascript.svg" title="javascript" alt="icon js" height="40px" width="35px">
-        </div>
-        <div class="framework">
-            <img src="assets/imgs/techs/react-js.svg" title="ReactJS" alt="icon react js" width="45px" height="40px">
-            <img src="assets/imgs/techs/qwik.svg" title="Qwik"alt="icon qwik" width="37px" height="40px">
-            <img src="assets/imgs/techs/alpine-js.svg" title="AlpineJS" alt="icon alpine js" width="87px" height="40px">
-        </div>
-        <div class="tools">
-            <img src="assets/imgs/techs/git.svg" title="Git" alt="icon git" width="40px" height="40px">
-            <img src="assets/imgs/techs/gulp.svg" title="Gulp" alt="icon gulp" width="18px" height="40px">
-            <img src="assets/imgs/techs/sass.svg" title="Sass" alt="icon sass" width="53px" height="40px">
-        </div>
-    </div>
-    
-    <!-- reach me -->
-    <div class="want-more">
-        <div class="btn reach-me">
-            <span><img src="assets/imgs/nav/contact.svg" alt="" height="25px" width="25px"></span>
+<section id="content" picked-one="0">
+    <div id="intro">
+        <div class="text">
+            <h1>Je suis <span>Axel RAKOTOARIVAO</span></h1>
             <p>
-                Me Contacter
+                Je suis un développeur Frontend spécialisé dans la 
+                conception de sites web captivants, utilisant Alpine.js, 
+                React JS et Qwik. Mon objectif principal est de créer 
+                des expériences utilisateur fluides et des interfaces 
+                intuitives. Chaque projet que je réalise vise à élever 
+                les normes d'engagement et de qualité.
             </p>
         </div>
-        <div class="btn my-cv">
-            <span><img src="assets/imgs/nav/download.svg" alt="" height="30px" width="30px"></span>
-            <p>Mon CV</p>
+    
+        <!-- Techs I uses -->
+        <h2>Tech Stack :</h2>
+        <div class="use">
+            <div class="core-web">
+                <img src="assets/imgs/techs/html-5.svg" title="html" alt="icon html" height="40px" width="35px">
+                <img src="assets/imgs/techs/css-3.svg" title="css" alt="icon css" height="40px" width="35px">
+                <img src="assets/imgs/techs/javascript.svg" title="javascript" alt="icon js" height="40px" width="35px">
+            </div>
+            <div class="framework">
+                <img src="assets/imgs/techs/react-js.svg" title="ReactJS" alt="icon react js" width="45px" height="40px">
+                <img src="assets/imgs/techs/qwik.svg" title="Qwik"alt="icon qwik" width="37px" height="40px">
+                <img src="assets/imgs/techs/alpine-js.svg" title="AlpineJS" alt="icon alpine js" width="87px" height="40px">
+            </div>
+            <div class="tools">
+                <img src="assets/imgs/techs/git.svg" title="Git" alt="icon git" width="40px" height="40px">
+                <img src="assets/imgs/techs/gulp.svg" title="Gulp" alt="icon gulp" width="18px" height="40px">
+                <img src="assets/imgs/techs/sass.svg" title="Sass" alt="icon sass" width="53px" height="40px">
+            </div>
         </div>
+        
+        <!-- reach me -->
+        <div class="want-more">
+            <div class="btn reach-me">
+                <span><img src="assets/imgs/nav/contact.svg" alt="" height="25px" width="25px"></span>
+                <p>
+                    Me Contacter
+                </p>
+            </div>
+            <div class="btn my-cv">
+                <span><img src="assets/imgs/nav/download.svg" alt="" height="30px" width="30px"></span>
+                <p>Mon CV</p>
+            </div>
+        </div>
+        
+        <!-- form -->
     </div>
     
-    <!-- form -->
-
+    <!-- active -->
+    <div id="bat" class="toggled">
+        <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
+        <h3>Projet Batman</h3>
+        <div class="infos">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Unde omnis cum laboriosam, vitae, consequuntur illo magni, 
+                doloremque quasi illum obcaecati nisi qui at similique amet. 
+                Quibusdam porro exercitationem perspiciatis molestiae veritatis.
+                Nihil velit quam, odio fugit excepturi ipsum eaque dolore, 
+                perspiciatis quidem assumenda commodi et.
+            </p>
+        </div>
+        <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
+    </div>
+    <!-- active -->
+    <div id="black" class="toggled">
+        <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
+        <h3>Projet Black Panther</h3>
+        <div class="infos">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Unde omnis cum laboriosam, vitae, consequuntur illo magni, 
+                doloremque quasi illum obcaecati nisi qui at similique amet. 
+                Quibusdam porro exercitationem perspiciatis molestiae veritatis.
+                Nihil velit quam, odio fugit excepturi ipsum eaque dolore, 
+                perspiciatis quidem assumenda commodi et.
+            </p>
+        </div>
+        <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
+    </div>
+    <!-- active -->
+    <div id="sup" class="toggled">
+        <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
+        <h3>Projet Superman</h3>
+        <div class="infos">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Unde omnis cum laboriosam, vitae, consequuntur illo magni, 
+                doloremque quasi illum obcaecati nisi qui at similique amet. 
+                Quibusdam porro exercitationem perspiciatis molestiae veritatis.
+                Nihil velit quam, odio fugit excepturi ipsum eaque dolore, 
+                perspiciatis quidem assumenda commodi et.
+            </p>
+        </div>
+        <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
+    </div>
 </section>
 
 <section id="portefolio">
@@ -124,10 +174,10 @@
         </div> -->
         <div id="menu" class="navigation">
             <div id="menu-items">
-                <div class="menu-item" onclick="changeBackground(1)"><p class="sub">Batman</p><span>00/00/000</span></div>
-                <div class="menu-item" onclick="changeBackground(2)"><p class="sub">Black Panther</p><span>00/00/000</span></div>
-                <div class="menu-item" onclick="changeBackground(3)"><p class="sub">Superman</p><span>00/00/000</span></div>
-                <div class="menu-item" onclick="changeBackground(0)"><p class="sub">Vacance Nosy be Tour</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(1); changeContent(1)"><p class="sub">Batman</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(2); changeContent(2)"><p class="sub">Black Panther</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(3); changeContent(3)"><p class="sub">Superman</p><span>00/00/000</span></div>
+                <div class="menu-item" onclick="changeBackground(0); changeContent(0)"><p class="sub">Vacance Nosy be Tour</p><span>00/00/000</span></div>
             </div>
             </div>
         </div>
@@ -142,6 +192,11 @@
         <div class="foot-item whatsapp"><img src="assets/imgs/footer/whatsapp.svg" alt="icon whatsapp" width="35px" height="35px"><a href="@">api.whatsapp.axel</a></div>
         <div class="foot-item linkedin"><img src="assets/imgs/footer/linkedin.svg" alt="icon linkedin" width="35px" height="35px"><a href="@">linkedin.com/in/diary-axel</a></div>
         <div class="foot-item github"><img src="assets/imgs/footer/github.svg" alt="icon github" width="35px" height="35px"><a href="@">github.com/dokja620</a></div>
+    </div>
+    <div class="copyright">
+        <p>
+            © 2024 Axel RAKOTOARIVAO. All rights reserved.
+        </p>
     </div>
 </footer>
 </body>

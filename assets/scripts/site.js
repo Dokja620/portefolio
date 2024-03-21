@@ -28,6 +28,31 @@ function changeBackground(index) {
   document.body.setAttribute('bg-index', index);
 }
 
+function changeContent(index) {
+  // Update the picked-one attribute of the content element
+  document.getElementById('content').setAttribute('picked-one', index);
+}
+
+// Preload images
+var images = [
+  '../../assets/imgs/bg-proj/bat.webp',
+  '../../assets/imgs/bg-proj/pant.webp',
+  '../../assets/imgs/bg-proj/sup.webp',
+  '../../assets/imgs/main-bg.webp'
+];
+
+function preloadImages() {
+  for (var i = 0; i < images.length; i++) {
+      var img = new Image();
+      img.src = images[i];
+  }
+}
+
+// Call the preloadImages function 1 second after the window loads
+window.onload = function() {
+  setTimeout(preloadImages, 500);
+};
+
 //
 //マウスストーカー
 
