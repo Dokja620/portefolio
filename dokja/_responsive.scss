@@ -37,6 +37,12 @@
     .container {
         max-width: 475px;
     }
+
+    #content {
+        h1 {
+            font-size: 2em;
+        }
+    }
 }
 
 /*xs*/
@@ -51,7 +57,7 @@
         padding: 25px;
 
         h1 {
-            font-size: clamp(1.2em, 10vw + 1em, 1.7em);
+            font-size: clamp(1.2em, 6.5vw, 1.9em);
         }
 
         .text {

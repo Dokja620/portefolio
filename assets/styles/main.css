@@ -575,6 +575,9 @@ footer p {
   .container {
     max-width: 475px;
   }
+  #content h1 {
+    font-size: 2em;
+  }
 }
 /*xs*/
 @media (max-width: 475px) {
@@ -587,7 +590,7 @@ footer p {
     padding: 25px;
   }
   #content h1 {
-    font-size: clamp(1.2em, 10vw + 1em, 1.7em);
+    font-size: clamp(1.2em, 6.5vw, 1.9em);
   }
   #content .text {
     width: 100%;
