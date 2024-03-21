@@ -50,3 +50,9 @@
 #content[picked-one="3"] > *:not(#sup){
     display: none;
 }
+#content[picked-one="4"] > *:not(#tour){
+    display: none;
+}
+#content[picked-one="5"] > *:not(#malala){
+    display: none;
+}

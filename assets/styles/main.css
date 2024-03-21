@@ -70,6 +70,22 @@ body[bg-index="3"]::after {
   opacity: 0;
 }
 
+body[bg-index="4"] {
+  background: #000 url(../../assets/imgs/bg-proj/tour.webp) right/cover no-repeat fixed;
+  height: 100lvh;
+}
+body[bg-index="4"]::after {
+  opacity: 0;
+}
+
+body[bg-index="5"] {
+  background: #000 url(../../assets/imgs/bg-proj/malala.webp) right/cover no-repeat fixed;
+  height: 100lvh;
+}
+body[bg-index="5"]::after {
+  opacity: 0;
+}
+
 body {
   background: url(../../assets/imgs/main-bg.webp) 90% center/cover no-repeat fixed;
   font-size: 16px;
@@ -104,7 +120,7 @@ header .logo {
   cursor: pointer;
 }
 header .logo .back-logo {
-  transition: 0.75s all ease-in;
+  transition: 0.75s transform ease-in;
   scale: 0.9;
 }
 header .logo:hover > .back-logo {
@@ -172,7 +188,7 @@ main section {
   display: flex;
   justify-content: center;
 }
-#content .want-more button {
+#content .want-more button, #content .want-more a {
   background: rgba(112, 112, 112, 0.2745098039);
   backdrop-filter: blur(3px);
   border-radius: 10px;
@@ -187,12 +203,12 @@ main section {
   outline-offset: -2px;
   transition: 0.25s outline-offset ease-in-out;
 }
-#content .want-more button p {
+#content .want-more button p, #content .want-more a p {
   margin-right: 5px;
   color: #fff;
   font-size: 1.1em;
 }
-#content .want-more button:hover, #content .want-more button:focus {
+#content .want-more button:hover, #content .want-more button:focus, #content .want-more a:hover, #content .want-more a:focus {
   outline: 1px solid rgba(112, 112, 112, 0.2745098039);
   outline-offset: 4px;
 }
@@ -204,16 +220,13 @@ main section {
   background: #070913;
   top: 0;
   left: 0;
-  z-index: 6;
   backdrop-filter: blur(5px);
+  z-index: 6;
 }
 .loader.hidden {
   -webkit-animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
   animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
   animation-delay: 0.25s;
-}
-.loader.close {
-  display: none;
 }
 
 .text-change-container {
@@ -365,17 +378,24 @@ main section {
   display: none;
 }
 
+#content[picked-one="4"] > *:not(#tour) {
+  display: none;
+}
+
+#content[picked-one="5"] > *:not(#malala) {
+  display: none;
+}
+
 /* Footer */
 footer {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   text-align: center;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4509803922);
-  box-shadow: #000 0px -12px 50px, inset rgba(0, 0, 0, 0.4392156863) 0px 12px 10px;
+  width: 350px;
+  margin: 0 auto;
   padding: 10px 0;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.6431372549), transparent);
 }
 footer p {
   font-family: "Outfit", sans-serif;
@@ -390,7 +410,7 @@ footer p {
   flex-wrap: wrap;
   gap: 10px;
   width: max-content;
-  margin: 15px auto;
+  margin: 5px auto 10px auto;
 }
 .social-media div {
   display: flex;
@@ -578,12 +598,15 @@ footer p {
     filter: blur(0px);
     opacity: 1;
   }
-  100% {
+  99.9% {
     -webkit-transform: scaleX(2);
     transform: scaleX(2);
     -webkit-filter: blur(4px);
     filter: blur(4px);
     opacity: 0;
+  }
+  100% {
+    display: none;
   }
 }
 @keyframes puff-out-hor {
@@ -594,12 +617,15 @@ footer p {
     filter: blur(0px);
     opacity: 1;
   }
-  100% {
+  99.9% {
     -webkit-transform: scaleX(2);
     transform: scaleX(2);
     -webkit-filter: blur(4px);
     filter: blur(4px);
     opacity: 0;
     z-index: -1;
+  }
+  100% {
+    display: none;
   }
 }

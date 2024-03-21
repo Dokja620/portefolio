@@ -32,6 +32,20 @@ body[bg-index="3"] {
         opacity: 0;
     }
 }
+body[bg-index="4"] {
+    background: #000 url(../../assets/imgs/bg-proj/tour.webp) right/cover no-repeat fixed;
+    height: 100lvh;
+    &::after{
+        opacity: 0;
+    }
+}
+body[bg-index="5"] {
+    background: #000 url(../../assets/imgs/bg-proj/malala.webp) right/cover no-repeat fixed;
+    height: 100lvh;
+    &::after{
+        opacity: 0;
+    }
+}
 
 // Body
 body {

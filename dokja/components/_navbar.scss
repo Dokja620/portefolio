@@ -9,7 +9,7 @@ header{
         height: 75px;
         cursor: pointer;
         .back-logo{
-            transition: .75s all ease-in;
+            transition: .75s transform ease-in;
             scale: .9;
         }
         &:hover > .back-logo{

@@ -2,13 +2,12 @@
 footer{
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     text-align: center;
-    width: 100%;
-    background: #00000073;
-    box-shadow: #000 0px -12px 50px, inset #00000070 0px 12px 10px;
+    width: 350px;
+    margin: 0 auto;
     padding: 10px 0;
+    background: linear-gradient(to right, transparent, #000000a4, transparent);
     p{
         @include outfit(200);
         font-size: .9em;
@@ -19,7 +18,7 @@ footer{
     flex-wrap: wrap;
     gap: 10px;
     width: max-content;
-    margin: 15px auto;
+    margin: 5px auto 10px auto;
     div{
         display: flex;
         align-items: center;

@@ -7,12 +7,15 @@
         opacity: 1;
     }
 
-    100% {
+    99.9% {
         -webkit-transform: scaleX(2);
         transform: scaleX(2);
         -webkit-filter: blur(4px);
         filter: blur(4px);
         opacity: 0;
+    }
+    100% {
+        display: none;
     }
 }
 
@@ -25,12 +28,15 @@
         opacity: 1;
     }
 
-    100% {
+    99.9% {
         -webkit-transform: scaleX(2);
         transform: scaleX(2);
         -webkit-filter: blur(4px);
         filter: blur(4px);
         opacity: 0;
         z-index: -1;
+    }
+    100% {
+        display: none;
     }
 }
