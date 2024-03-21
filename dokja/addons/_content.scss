@@ -19,6 +19,8 @@
 
         div {
             height: 40px;
+            width: -webkit-max-content;
+            width: -moz-max-content;
             width: max-content;
             @include box();
             padding: 5px;
@@ -35,7 +37,8 @@
         display: flex;
         justify-content: center;
 
-        button, a {
+        button,
+        a {
             @include box(#70707046, 10px);
             padding: 1px 5px;
             margin-right: 15px;
@@ -62,25 +65,6 @@
     }
 }
 
-@import 'https://fonts.googleapis.com/css2?family=Goldman&display=swap';
-
-.loader {
-    width: 100vw;
-    height: 100lvh;
-    position: fixed;
-    background: #070913;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(5px);
-    z-index: 6;
-    
-    &.hidden {
-        -webkit-animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-        animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-        animation-delay: .25s;
-    }
-}
-
 .text-change-container {
     height: 100%;
     width: 100%;
@@ -94,10 +78,12 @@
     font-weight: normal;
     font-size: larger;
     color: #c8c8c8;
+    -webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 200, 0.3));
     filter: drop-shadow(0 0 0.3em rgba(200, 200, 200, 0.3));
 }
 
 .dud {
     color: #7DF9FF;
+    -webkit-filter: drop-shadow(0 0 0.5em #00f);
     filter: drop-shadow(0 0 0.5em #00f);
 }

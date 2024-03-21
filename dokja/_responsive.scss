@@ -44,22 +44,27 @@
     .container {
         width: 100%;
     }
-    #content{
+
+    #content {
         width: 100%;
         min-width: 250px;
         padding: 25px;
-        h1{
+
+        h1 {
             font-size: clamp(1.2em, 10vw + 1em, 1.7em);
         }
-        .text{
+
+        .text {
             width: 100%;
         }
-        .use{
+
+        .use {
             flex-wrap: wrap;
             margin-bottom: 35px;
         }
     }
-    #portefolio{
+
+    #portefolio {
         width: 100%;
         padding: 0 20px;
         margin-bottom: 75px;

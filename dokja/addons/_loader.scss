@@ -1,0 +1,20 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #070913;
+    z-index: 3;
+    transition: .45s ease-in-out all;
+}
+
+.loader-hidden {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+}

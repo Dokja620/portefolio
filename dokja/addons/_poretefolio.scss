@@ -2,6 +2,7 @@
 #portefolio {
     color: #8695E4;
     max-width: 405px;
+
     .sector {
         @include box(#070913a2, 15px);
         overflow: hidden;
@@ -59,6 +60,8 @@
 
     // Project menu hover
     #menu-items {
+        height: -webkit-max-content;
+        height: -moz-max-content;
         height: max-content;
     }
 

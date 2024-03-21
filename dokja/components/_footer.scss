@@ -1,5 +1,5 @@
 // footer
-footer{
+footer {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -8,18 +8,23 @@ footer{
     margin: 0 auto;
     padding: 10px 0;
     background: linear-gradient(to right, transparent, #000000a4, transparent);
-    p{
+
+    p {
         @include outfit(200);
         font-size: .9em;
     }
 }
+
 .social-media {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     margin: 5px auto 10px auto;
-    div{
+
+    div {
         display: flex;
         align-items: center;
         overflow: hidden;
@@ -28,31 +33,42 @@ footer{
         border-radius: 12px;
         transition: .5s width ease-in-out .25s;
         cursor: pointer;
-        a{
+
+        a {
+            min-width: -webkit-max-content;
+            min-width: -moz-max-content;
             min-width: max-content;
         }
-        &.gmail, &.whatsapp{
+
+        &.gmail,
+        &.whatsapp {
             background: #fff;
-            a{
+
+            a {
                 color: #000;
                 border-color: #0000009c;
             }
         }
-        &.linkedin{
-            a{
+
+        &.linkedin {
+            a {
                 color: #fff;
                 border-color: #ffffff9c;
             }
+
             background: #0077b5;
         }
-        &.github{
-            a{
+
+        &.github {
+            a {
                 color: #fff;
                 border-color: #ffffff9c;
             }
+
             background: #000;
         }
-        a{
+
+        a {
             @include outfit(300);
             padding: 0 10px 0 10px;
             border-left: 2px solid;
@@ -60,15 +76,18 @@ footer{
     }
 }
 
-#foot[data-active-index="0"] > .gmail{
+#foot[data-active-index="0"]>.gmail {
     width: 254px;
 }
-#foot[data-active-index="1"] > .whatsapp{
+
+#foot[data-active-index="1"]>.whatsapp {
     width: 187px;
 }
-#foot[data-active-index="2"] > .linkedin{
+
+#foot[data-active-index="2"]>.linkedin {
     width: 241px;
 }
-#foot[data-active-index="3"] > .github{
+
+#foot[data-active-index="3"]>.github {
     width: 209px;
 }

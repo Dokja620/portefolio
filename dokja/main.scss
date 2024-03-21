@@ -16,10 +16,14 @@ main {
     min-height: calc(100lvh - 197px);
     margin: 25px 0 35px 0;
     padding: 50px 0;
+
     section {
+        width: -webkit-max-content;
+        width: -moz-max-content;
         width: max-content;
     }
 }
+
 // Page
 @import './addons/content';
 @import './addons/poretefolio';
@@ -32,3 +36,4 @@ main {
 /* Responsive */
 @import './responsive';
 @import './animations';
+@import './addons/loader';

@@ -9,19 +9,24 @@
 }
 
 /* Typo */
-h1{
+h1 {
     font-size: 2em;
 }
-h1, span{
+
+h1,
+span {
     @include outfit(500);
 }
-h2{
+
+h2 {
     @include outfit(400);
     color: #6495ED;
 }
-h3{
+
+h3 {
     @include outfit(350);
 }
-p{
+
+p {
     @include outfit(300);
 }

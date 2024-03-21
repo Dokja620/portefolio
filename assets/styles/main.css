@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 /* Typo */
-@import 'https://fonts.googleapis.com/css2?family=Goldman&display=swap';
 h1 {
   font-size: 2em;
 }
 
-h1, span {
+h1,
+span {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -102,6 +102,7 @@ body::after {
   width: 100vw;
   height: 100lvh;
   background: rgba(7, 9, 19, 0.6862745098);
+  -webkit-backdrop-filter: hue-rotate(20deg);
   backdrop-filter: hue-rotate(20deg);
   z-index: -1;
   transition: 0.25s all ease-in-out;
@@ -121,7 +122,7 @@ header .logo {
 }
 header .logo .back-logo {
   transition: 0.75s transform ease-in;
-  scale: 0.9;
+  transform: scale(0.9);
 }
 header .logo:hover > .back-logo {
   transform: rotate(90deg);
@@ -151,6 +152,8 @@ main {
   padding: 50px 0;
 }
 main section {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -172,8 +175,11 @@ main section {
 }
 #content .use div {
   height: 40px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   background: rgba(28, 4, 34, 0.3647058824);
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid #707070;
@@ -188,8 +194,10 @@ main section {
   display: flex;
   justify-content: center;
 }
-#content .want-more button, #content .want-more a {
+#content .want-more button,
+#content .want-more a {
   background: rgba(112, 112, 112, 0.2745098039);
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid #707070;
@@ -203,30 +211,17 @@ main section {
   outline-offset: -2px;
   transition: 0.25s outline-offset ease-in-out;
 }
-#content .want-more button p, #content .want-more a p {
+#content .want-more button p,
+#content .want-more a p {
   margin-right: 5px;
   color: #fff;
   font-size: 1.1em;
 }
-#content .want-more button:hover, #content .want-more button:focus, #content .want-more a:hover, #content .want-more a:focus {
+#content .want-more button:hover, #content .want-more button:focus,
+#content .want-more a:hover,
+#content .want-more a:focus {
   outline: 1px solid rgba(112, 112, 112, 0.2745098039);
   outline-offset: 4px;
-}
-
-.loader {
-  width: 100vw;
-  height: 100lvh;
-  position: fixed;
-  background: #070913;
-  top: 0;
-  left: 0;
-  backdrop-filter: blur(5px);
-  z-index: 6;
-}
-.loader.hidden {
-  -webkit-animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
-  animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
-  animation-delay: 0.25s;
 }
 
 .text-change-container {
@@ -242,11 +237,13 @@ main section {
   font-weight: normal;
   font-size: larger;
   color: #c8c8c8;
+  -webkit-filter: drop-shadow(0 0 0.3em rgba(200, 200, 200, 0.3));
   filter: drop-shadow(0 0 0.3em rgba(200, 200, 200, 0.3));
 }
 
 .dud {
   color: #7DF9FF;
+  -webkit-filter: drop-shadow(0 0 0.5em #00f);
   filter: drop-shadow(0 0 0.5em #00f);
 }
 
@@ -256,6 +253,7 @@ main section {
 }
 #portefolio .sector {
   background: rgba(7, 9, 19, 0.6352941176);
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 15px;
   border: 1px solid #707070;
@@ -282,6 +280,7 @@ main section {
 }
 #portefolio .option.active {
   background: rgba(112, 112, 112, 0.2745098039);
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 10px;
   border: 1px solid #707070;
@@ -307,6 +306,8 @@ main section {
   margin-right: 10px;
 }
 #portefolio #menu-items {
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
 }
 #portefolio #menu-items:hover > .menu-item {
@@ -321,24 +322,30 @@ main section {
 
 .toggled {
   margin: 0 25px;
+  min-width: 440px;
 }
 .toggled h3 {
   font-size: clamp(1.5em, 10vw, 2.5em);
 }
 .toggled .back {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   cursor: pointer;
-  transition: translate 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
 }
 .toggled .back:hover, .toggled .back:focus {
-  translate: -10px;
+  transform: translateX(-10px);
 }
 .toggled .btn {
   display: flex;
   align-items: center;
   background: rgba(129, 129, 129, 0.2588235294);
+  -webkit-backdrop-filter: blur(3px) brightness(100%);
   backdrop-filter: blur(3px) brightness(100%);
   border: 2px solid rgba(112, 112, 112, 0.4196078431);
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   padding: 0.1em 0.9em;
   margin: 10px 0;
@@ -409,6 +416,8 @@ footer p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 5px auto 10px auto;
 }
@@ -423,6 +432,8 @@ footer p {
   cursor: pointer;
 }
 .social-media div a {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
   min-width: max-content;
 }
 .social-media div.gmail, .social-media div.whatsapp {
@@ -590,16 +601,98 @@ footer p {
     margin-bottom: 75px;
   }
 }
+#intro {
+  animation: 0.5s intro ease forwards;
+}
+
+@keyframes intro {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+.logo {
+  -webkit-animation: roll-in-left 0.7s ease-out both 2.6s;
+  animation: roll-in-left 0.7s ease-out both 2.6s;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-3-21 16:33:25
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation roll-in-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes roll-in-left {
+  0% {
+    transform: translateX(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes roll-in-left {
+  0% {
+    transform: translateX(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+.toggled {
+  -webkit-animation: 0.35s entrance ease-in forwards;
+  animation: 0.35s entrance ease-in forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes entrance {
+  from {
+    transform: translateX(-50px);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+}
+@keyframes entrance {
+  from {
+    transform: translateX(-50px);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+}
 @-webkit-keyframes puff-out-hor {
   0% {
-    -webkit-transform: scaleX(1);
     transform: scaleX(1);
     -webkit-filter: blur(0px);
     filter: blur(0px);
     opacity: 1;
   }
   99.9% {
-    -webkit-transform: scaleX(2);
     transform: scaleX(2);
     -webkit-filter: blur(4px);
     filter: blur(4px);
@@ -611,14 +704,12 @@ footer p {
 }
 @keyframes puff-out-hor {
   0% {
-    -webkit-transform: scaleX(1);
     transform: scaleX(1);
     -webkit-filter: blur(0px);
     filter: blur(0px);
     opacity: 1;
   }
   99.9% {
-    -webkit-transform: scaleX(2);
     transform: scaleX(2);
     -webkit-filter: blur(4px);
     filter: blur(4px);
@@ -628,4 +719,24 @@ footer p {
   100% {
     display: none;
   }
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #070913;
+  z-index: 3;
+  transition: 0.45s ease-in-out all;
+}
+
+.loader-hidden {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
 }

@@ -12,7 +12,8 @@
 body[bg-index="1"] {
     background: #000 url(../../assets/imgs/bg-proj/bat.webp) top center/cover no-repeat fixed;
     height: 100lvh;
-    &::after{
+
+    &::after {
         opacity: 0;
     }
 }
@@ -20,7 +21,8 @@ body[bg-index="1"] {
 body[bg-index="2"] {
     background: #000 url(../../assets/imgs/bg-proj/pant.webp) 70% 20%/cover no-repeat fixed;
     height: 100lvh;
-    &::after{
+
+    &::after {
         opacity: 0;
     }
 }
@@ -28,21 +30,26 @@ body[bg-index="2"] {
 body[bg-index="3"] {
     background: #000 url(../../assets/imgs/bg-proj/sup.webp) right/cover no-repeat fixed;
     height: 100lvh;
-    &::after{
+
+    &::after {
         opacity: 0;
     }
 }
+
 body[bg-index="4"] {
     background: #000 url(../../assets/imgs/bg-proj/tour.webp) right/cover no-repeat fixed;
     height: 100lvh;
-    &::after{
+
+    &::after {
         opacity: 0;
     }
 }
+
 body[bg-index="5"] {
     background: #000 url(../../assets/imgs/bg-proj/malala.webp) right/cover no-repeat fixed;
     height: 100lvh;
-    &::after{
+
+    &::after {
         opacity: 0;
     }
 }
@@ -55,7 +62,8 @@ body {
     color: #fff;
     position: relative;
     transition: .5s all ease;
-    &::after{
+
+    &::after {
         content: '';
         position: fixed;
         top: 0;
@@ -63,6 +71,7 @@ body {
         width: 100vw;
         height: 100lvh;
         background: #070913af;
+        -webkit-backdrop-filter: hue-rotate(20deg);
         backdrop-filter: hue-rotate(20deg);
         z-index: -1;
         transition: .25s all ease-in-out;

@@ -1,9 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // After page is loaded, wait for 1 second and hide the loader
-  setTimeout(function () {
-      document.querySelector('.loader').classList.add('hidden');
-  }, 1900);
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  setTimeout(() => {
+    loader.classList.add("loader-hidden");
+
+    loader.addEventListener("transitionend", () => {
+      document.body.removeChild(loader);
+    });
+  }, 2000);
 });
+
 
 function handleMouseEvents(containerId, itemClass, datasetName) {
   const container = document.getElementById(containerId);
@@ -27,11 +33,6 @@ function handleMouseEvents(containerId, itemClass, datasetName) {
 
 handleMouseEvents("menu", "menu-item", "activeIndex");
 handleMouseEvents("foot", "foot-item", "activeIndex");
-
-function changeBackground(index) {
-  // Set the background index attribute of the body element
-  document.body.setAttribute('bg-index', index);
-}
 
 // Function to start the background loop with a delay between iterations
 function startBackgroundLoop() {
@@ -58,6 +59,10 @@ function startBackgroundLoop() {
   }
 }
 
+function changeBackground(index) {
+  // Set the background index attribute of the body element
+  document.body.setAttribute('bg-index', index);
+}
 
 function changeContent(index) {
   // Update the picked-one attribute of the content element
