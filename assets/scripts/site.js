@@ -33,25 +33,40 @@ function changeContent(index) {
   document.getElementById('content').setAttribute('picked-one', index);
 }
 
-// Preload images
-var images = [
-  '../../assets/imgs/bg-proj/bat.webp',
-  '../../assets/imgs/bg-proj/pant.webp',
-  '../../assets/imgs/bg-proj/sup.webp',
-  '../../assets/imgs/main-bg.webp'
-];
+ // Function to preload background images defined in CSS
+ function preloadBackgroundImages() {
+  var styleSheets = document.styleSheets; // Get all style sheets
+  var imageUrls = [];
 
-function preloadImages() {
-  for (var i = 0; i < images.length; i++) {
+  // Loop through each style sheet
+  for (var i = 0; i < styleSheets.length; i++) {
+      var rules = styleSheets[i].cssRules; // Get rules of each style sheet
+
+      // Loop through each rule
+      for (var j = 0; j < rules.length; j++) {
+          var rule = rules[j];
+          if (rule.style && rule.style.backgroundImage) {
+              var backgroundImage = rule.style.backgroundImage;
+
+              // Extract the URL from background-image property
+              var urlMatch = backgroundImage.match(/url\(["']?(.*?)["']?\)/);
+              if (urlMatch) {
+                  var imageUrl = urlMatch[1];
+                  imageUrls.push(imageUrl);
+              }
+          }
+      }
+  }
+
+  // Preload images
+  for (var k = 0; k < imageUrls.length; k++) {
       var img = new Image();
-      img.src = images[i];
+      img.src = imageUrls[k];
   }
 }
 
-// Call the preloadImages function 1 second after the window loads
-window.onload = function() {
-  setTimeout(preloadImages, 500);
-};
+// Call the preloadBackgroundImages function when the window loads
+window.onload = preloadBackgroundImages;
 
 //
 //マウスストーカー
