@@ -204,6 +204,7 @@ main section {
 .loader.hidden {
   -webkit-animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
   animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  animation-delay: 0.25s;
 }
 @-webkit-keyframes puff-out-hor {
   0% {
@@ -235,6 +236,7 @@ main section {
     -webkit-filter: blur(4px);
     filter: blur(4px);
     opacity: 0;
+    z-index: -1;
   }
 }
 

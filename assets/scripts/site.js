@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // After page is loaded, wait for 1 second and hide the loader
   setTimeout(function () {
       document.querySelector('.loader').classList.add('hidden');
-  }, 1900);
+  }, 2000);
 });
 
 function handleMouseEvents(containerId, itemClass, datasetName) {
