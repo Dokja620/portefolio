@@ -47,7 +47,7 @@ function startBackgroundLoop() {
     // Schedule the next iteration with a delay of 0.1 seconds (100 milliseconds)
     setTimeout(function () {
       loopWithDelay(index + 1);
-    }, 5);
+    }, 250);
   }
 }
 
