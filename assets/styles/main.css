@@ -2,6 +2,7 @@
 /* Typo */
 h1 {
   font-size: 2em;
+  width: max-content;
 }
 
 h1,
