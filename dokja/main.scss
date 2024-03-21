@@ -10,10 +10,12 @@
 main {
     display: flex;
     flex-wrap: wrap;
+    gap: 25px;
     align-items: center;
     justify-content: space-evenly;
-    min-height: calc(100lvh - 150px);
+    min-height: calc(100lvh - 197px);
     margin: 25px 0 35px 0;
+    padding: 50px 0;
     section {
         width: max-content;
     }

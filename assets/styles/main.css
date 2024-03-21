@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 /* Typo */
+@import 'https://fonts.googleapis.com/css2?family=Goldman&display=swap';
 h1 {
   font-size: 2em;
 }
@@ -16,6 +17,7 @@ h2 {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  color: #6495ED;
 }
 
 h3 {
@@ -119,10 +121,12 @@ header .language img {
 main {
   display: flex;
   flex-wrap: wrap;
+  gap: 25px;
   align-items: center;
   justify-content: space-evenly;
-  min-height: calc(100lvh - 150px);
+  min-height: calc(100lvh - 197px);
   margin: 25px 0 35px 0;
+  padding: 50px 0;
 }
 main section {
   width: max-content;
@@ -130,6 +134,9 @@ main section {
 
 #content {
   max-width: 455px;
+}
+#content span {
+  color: #0096FF;
 }
 #content .text {
   width: 55ch;
@@ -159,7 +166,7 @@ main section {
   display: flex;
   justify-content: center;
 }
-#content .want-more div {
+#content .want-more button {
   background: rgba(112, 112, 112, 0.2745098039);
   backdrop-filter: blur(3px);
   border-radius: 10px;
@@ -170,9 +177,86 @@ main section {
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  outline: 1px solid rgba(112, 112, 112, 0.2745098039);
+  outline-offset: -2px;
+  transition: 0.25s outline-offset ease-in-out;
 }
-#content .want-more div p {
+#content .want-more button p {
   margin-right: 5px;
+  color: #fff;
+  font-size: 1.1em;
+}
+#content .want-more button:hover, #content .want-more button:focus {
+  outline: 1px solid rgba(112, 112, 112, 0.2745098039);
+  outline-offset: 4px;
+}
+
+.loader {
+  width: 100vw;
+  height: 100lvh;
+  position: fixed;
+  background: #070913;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  backdrop-filter: blur(5px);
+}
+.loader.hidden {
+  -webkit-animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+@-webkit-keyframes puff-out-hor {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+}
+@keyframes puff-out-hor {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(2);
+    transform: scaleX(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+}
+
+.text-change-container {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.text-change {
+  font-family: "Goldman", monospace;
+  font-weight: normal;
+  font-size: larger;
+  color: #c8c8c8;
+  filter: drop-shadow(0 0 0.3em rgba(200, 200, 200, 0.3));
+}
+
+.dud {
+  color: #7DF9FF;
+  filter: drop-shadow(0 0 0.5em #00f);
 }
 
 #portefolio {
@@ -244,18 +328,26 @@ main section {
   padding-left: 10px;
 }
 
+.toggled {
+  margin: 0 25px;
+}
 .toggled h3 {
   font-size: clamp(1.5em, 10vw, 2.5em);
 }
 .toggled .back {
+  width: max-content;
   cursor: pointer;
+  transition: translate 0.25s ease-in-out;
+}
+.toggled .back:hover, .toggled .back:focus {
+  translate: -10px;
 }
 .toggled .btn {
   display: flex;
   align-items: center;
-  background: rgba(129, 129, 129, 0.0549019608);
-  backdrop-filter: blur(3px) brightness(200%);
-  border: 2px solid #707070;
+  background: rgba(129, 129, 129, 0.2588235294);
+  backdrop-filter: blur(3px) brightness(100%);
+  border: 2px solid rgba(112, 112, 112, 0.4196078431);
   width: max-content;
   padding: 0.1em 0.9em;
   margin: 10px 0;
@@ -265,10 +357,18 @@ main section {
   font-weight: 200;
   font-style: normal;
   cursor: pointer;
+  outline: 1px solid rgba(112, 112, 112, 0.2745098039);
+  outline-offset: -2px;
+  transition: 0.25s outline-offset ease-in-out;
+}
+.toggled .btn:hover, .toggled .btn:focus {
+  outline: 1px solid rgba(112, 112, 112, 0.2745098039);
+  outline-offset: 4px;
 }
 .toggled .btn span {
   margin-left: 10px;
   padding-top: 5px;
+  transition: 0.25s all ease-in-out;
 }
 
 #content[picked-one="0"] > *:not(#intro) {
@@ -289,8 +389,15 @@ main section {
 
 /* Footer */
 footer {
-  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4509803922);
+  box-shadow: #000 0px -12px 50px, inset rgba(0, 0, 0, 0.4392156863) 0px 12px 10px;
+  padding: 10px 0;
 }
 footer p {
   font-family: "Outfit", sans-serif;
@@ -427,7 +534,6 @@ footer p {
 .container {
   max-width: 1536px;
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 /*2xl*/

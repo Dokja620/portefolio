@@ -1,6 +1,9 @@
 // First the content section
 #content {
     max-width: 455px;
+    span{
+        color: #0096FF ;
+    }
     .text {
         width: 55ch;
         text-align: justify;
@@ -30,7 +33,7 @@
         display: flex;
         justify-content: center;
 
-        div {
+        button {
             @include box(#70707046, 10px);
             padding: 1px 5px;
             margin-right: 15px;
@@ -38,10 +41,86 @@
             align-items: center;
             gap: 5px;
             cursor: pointer;
-
+            outline: 1px solid #70707046;
+            outline-offset: -2px;
+            transition: .25s outline-offset ease-in-out;
             p {
                 margin-right: 5px;
+                color: #fff;
+                font-size: 1.1em;
+            }
+            &:hover, &:focus{
+                outline: 1px solid #70707046;
+                outline-offset: 4px;
             }
         }
     }
+}
+
+@import 'https://fonts.googleapis.com/css2?family=Goldman&display=swap';
+.loader{
+    width: 100vw;
+    height: 100lvh;
+    position: fixed;
+    background: #070913;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    backdrop-filter: blur(5px);
+    &.hidden{
+        -webkit-animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+	        animation: puff-out-hor 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+    }
+@-webkit-keyframes puff-out-hor {
+    0% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(2);
+              transform: scaleX(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+  }
+  @keyframes puff-out-hor {
+    0% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(2);
+              transform: scaleX(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+  }
+  
+  
+}
+.text-change-container {
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.text-change {
+	font-family: 'Goldman', monospace;
+	font-weight: normal;
+	font-size: larger;
+	color: #c8c8c8;
+	filter: drop-shadow(0 0 0.3em rgba(200,200,200,0.3));
+}
+.dud {
+	color: #7DF9FF;
+	filter: drop-shadow(0 0 0.5em #00f);
 }

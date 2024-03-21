@@ -17,6 +17,7 @@ h1, span{
 }
 h2{
     @include outfit(400);
+    color: #6495ED;
 }
 h3{
     @include outfit(350);
