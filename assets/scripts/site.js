@@ -4,9 +4,12 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     loader.classList.add("loader-hidden");
 
-    loader.addEventListener("transitionend", () => {
+    const transitionEndHandler = () => {
       document.body.removeChild(loader);
-    });
+      loader.removeEventListener("transitionend", transitionEndHandler);
+    };
+
+    loader.addEventListener("transitionend", transitionEndHandler);
   }, 2000);
 });
 
