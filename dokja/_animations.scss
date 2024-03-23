@@ -36,10 +36,33 @@
     }
 }
 
+/* Popup animation */
+#success-popup {
+    display: none;
+    -webkit-animation: .5s popup ease;
+            animation: .5s popup ease;
+}
+
+@keyframes popup {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+        -webkit-filter: blur(5px);
+                filter: blur(5px);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        -webkit-filter: blur(0);
+                filter: blur(0);
+    }
+}
+
 /* Logo animation */
 .logo {
-    -webkit-animation: roll-in-left .7s ease-out both 2.6s;
-            animation: roll-in-left .7s ease-out both 2.6s;
+    -webkit-animation: roll-in-left .7s ease-out both 2.7s;
+            animation: roll-in-left .7s ease-out both 2.7s;
 }
 
 @-webkit-keyframes roll-in-left {

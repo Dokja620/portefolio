@@ -10,6 +10,8 @@
     <link rel="shortcut icon" href="assets/imgs/mugen-dev.webp" type="image/x-icon">
     <!-- JS -->
     <script src="assets/scripts/site.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script src="assets/scripts/email.js" defer></script>
     <!-- <script src="assets/scripts/alpine.min.js" defer></script> -->
     
 </head>
@@ -17,10 +19,14 @@
     <!-- custom cursor -->
     <div class="js-cursor" id="js-cursor"></div>
     <!-- page loader -->
-    <div class="loader">
+    <!-- <div class="loader">
         <div class="text-change-container">
             <div class="text-change"></div>
           </div>
+    </div> -->
+    <div id="success-popup">
+        <p>Votre message a <br> bien été envoyer</p>
+        <span><img src="assets/imgs/nav/check.svg" alt="check icon" width="30px" height="30px"></span>
     </div>
 <header>
     <div class="logo" onclick="changeBackground(0); changeContent(0); callForm(0)">
@@ -41,9 +47,9 @@
         <div class="text">
             <h1 class="swap" data-hover="Dev front.">Je suis <span class="me" >Axel RAKOTOARIVAO</span></h1>
             <p>
-                Développeur Front-End
+                Développeur <span>Front-End</span>
                 Spécialisé dans la conception de sites web captivants, 
-                utilisant Alpine.js, React JS et Qwik. Mon objectif 
+                utilisant <span>React JS</span>, <span>Qwik</span> et <span>Alpine.js</span>. Mon objectif 
                 principal est de créer des expériences utilisateur 
                 fluides et des interfaces intuitives. Chaque projet 
                 que je réalise vise à élever les normes d'engagement 
@@ -92,12 +98,21 @@
     <div id="bat" class="toggled">
         <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
         <h3>Projet Batman</h3>
+        <h4><span>SAYNA:</span> Projet Fil Rouge - BATMAN.</h4>
         <div class="infos">
             <p>
-                SAYNA: Projet Fil Rouge - BATMAN. <br> Conception responsive fidèle aux maquettes, 
-                intégrant animations, contenus variés. Priorité à l'expérience utilisateur et à la 
-                dynamique du site. Résultat optimisé grâce à une approche attentive.
+                Dans le projet "Batman", j'ai développé un site web responsive, 
+                combinant HTML, CSS, JavaScript et TypeScript. Ce projet s'inscrit 
+                dans un parcours de formation où j'ai amélioré le design et ajouté 
+                des fonctionnalités interactives. J'ai respecté les spécifications 
+                du client et présenté le travail sur GitHub pour évaluation.
             </p>
+            <div class="category">
+                <div>Git</div>
+                <div>Html</div>
+                <div>Sass</div>
+                <div>Javascript</div>
+            </div>
         </div>
         <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
     </div>
@@ -105,10 +120,23 @@
     <div id="black" class="toggled">
         <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
         <h3 class="title">Projet Black Panther</h3>
+        <h4><span>SAYNA:</span> Projet Fil Rouge - PANTHER.</h4>
         <div class="infos">
             <p>
-                SAYNA: Projet Fil Rouge - BATMAN. <br>
+                Avec précision et créativité, j'ai donné vie 
+                à l'univers de Black Panther dans un site web 
+                réactif. Des animations dynamiques et des quiz 
+                interactifs plongent les visiteurs dans le monde 
+                de T'Challa, tandis que des implémentations JavaScript 
+                et Canvas innovantes offrent une expérience numérique 
+                inoubliable, fidèle à la vision du client.
             </p>
+            <div class="category">
+                <div>Git</div>
+                <div>Html</div>
+                <div>Sass</div>
+                <div>Javascript</div>
+            </div>
         </div>
         <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
     </div>
@@ -116,47 +144,67 @@
     <div id="sup" class="toggled">
         <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
         <h3>Projet Superman</h3>
+        <h4><span>SAYNA:</span> Evaluation Front End - SUPERMAN.</h4>
         <div class="infos">
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Unde omnis cum laboriosam, vitae, consequuntur illo magni, 
-                doloremque quasi illum obcaecati nisi qui at similique amet. 
-                Quibusdam porro exercitationem perspiciatis molestiae veritatis.
-                Nihil velit quam, odio fugit excepturi ipsum eaque dolore, 
-                perspiciatis quidem assumenda commodi et.
+                Conception et développement d'un site réactif 
+                mettant en vedette Superman grâce à React JS. 
+                Intégration d'animations dynamiques et de 
+                fonctionnalités de filtrage pour une expérience 
+                utilisateur immersive. Navigation intuitive et une 
+                découverte aisée des produits.
             </p>
+            <div class="category">
+                <div>Git</div>
+                <div>ReactJS</div>
+                <div>Sass</div>
+            </div>
         </div>
         <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
     </div>
     <!-- active -->
     <div id="tour" class="toggled">
         <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
-        <h3>Projet Vacances Nosy Be Tour</h3>
+        <h3>Vacances Nosy Be Tour</h3>
+        <h4><span>Ohayo Dev&Design:</span> Excrusion Nosy Be</h4>
         <div class="infos">
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Unde omnis cum laboriosam, vitae, consequuntur illo magni, 
-                doloremque quasi illum obcaecati nisi qui at similique amet. 
-                Quibusdam porro exercitationem perspiciatis molestiae veritatis.
-                Nihil velit quam, odio fugit excepturi ipsum eaque dolore, 
-                perspiciatis quidem assumenda commodi et.
+                Vacances Nosy-Be Tour, la plateforme en ligne de l'agence éponyme, 
+                simplifie l'organisation de séjours à Nosy-Be. Avec une sélection 
+                d'excursions soigneusement choisies sur l'île et ses environs, ainsi 
+                qu'une exploration du nord de Madagascar, les utilisateurs peuvent 
+                réserver facilement grâce à une interface intuitive. De plus, une 
+                boutique en ligne propose des produits artisanaux locaux.
             </p>
+            <div class="category">
+                <div>Git</div>
+                <div>ReactJS</div>
+                <div>Sass</div>
+            </div>
         </div>
         <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
     </div>
     <!-- active -->
     <div id="malala" class="toggled">
         <div class="back" onclick="changeBackground(0); changeContent(0)"><img src="assets/imgs/nav/back.svg" alt="back button" width="35px" height="35px"></div>
-        <h3>Projet Malala Evasion</h3>
+        <h3>Malala Evasion</h3>
+        <h4><span>Ohayo Dev&Design:</span> Excrusion Nosy Be</h4>
         <div class="infos">
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Unde omnis cum laboriosam, vitae, consequuntur illo magni, 
-                doloremque quasi illum obcaecati nisi qui at similique amet. 
-                Quibusdam porro exercitationem perspiciatis molestiae veritatis.
-                Nihil velit quam, odio fugit excepturi ipsum eaque dolore, 
-                perspiciatis quidem assumenda commodi et.
+                MalalaEvasion.com, appartenant à Malala Evasion à Nosy Be, 
+                propose diverses excursions telles que des tours complets 
+                de l'île et des visites des îlots voisins comme Nosy Komba, 
+                Nosy Tanikely, Nosy Iranja et Nosy Sakatia, ainsi que la 
+                réserve naturelle de Nosy Be. Les clients peuvent planifier 
+                et réserver en ligne en fonction de la disponibilité et du 
+                nombre de participants.
             </p>
+            <div class="category">
+                <div>Git</div>
+                <div>Html</div>
+                <div>Sass</div>
+                <div>Javascript</div>
+            </div>
         </div>
         <div class="btn">Visiter le site <span><img src="assets/imgs/nav/more.svg" alt="see more icon" width="25px" height="25px"></span></div>
     </div>
@@ -181,20 +229,26 @@
     </div>
 
     <!-- form -->
-    <form id="form" action="submit">
-        <div class="close"  onclick="callForm(0)"><img src="assets/imgs/nav/close.svg" alt="icon close" width="25px" height="25px"></div>
-        <div class="fields">
-            <div class="show"><p>Nom</p></div>
-            <input type="text" name="" id="" placeholder="..." required>
+    <form id="contact-form">
+        <div class="close" onclick="callForm(0)">
+            <img src="assets/imgs/nav/close.svg" alt="icon close" width="25px" height="25px">
         </div>
         <div class="fields">
-            <div class="show"><p>Email</p></div>
-            <input type="email" name="" id="" placeholder="..." required>
+            <div class="show">
+                <p>Nom</p>
+            </div>
+            <input type="text" name="from_name" id="name" placeholder="..." required>
+        </div>
+        <div class="fields">
+            <div class="show">
+                <p>Email</p>
+            </div>
+            <input type="email" name="from_email" id="email" placeholder="..." required>
         </div>
         <div class="message">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Message..." required></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message..." required></textarea>
         </div>
-        <button>Envoyer</button>
+        <button type="submit">Envoyer</button>
     </form>
 </section>
 

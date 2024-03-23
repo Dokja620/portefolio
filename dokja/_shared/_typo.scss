@@ -26,6 +26,11 @@ h2 {
 
 h3 {
     @include outfit(350);
+    font-size: clamp(1.5em, 10vw, 2.5em);
+}
+
+h4{
+    @include outfit(400);
 }
 
 p {

@@ -56,7 +56,7 @@ body[bg-index="5"] {
 
 // Body
 body {
-    background: url(../../assets/imgs/main-bg.webp) 90% center/cover no-repeat fixed;
+    background: #070913 url(../../assets/imgs/main-bg.webp) 90% center/cover no-repeat fixed;
     font-size: 16px;
     height: 100lvh;
     color: #fff;
@@ -70,9 +70,9 @@ body {
         left: 0;
         width: 100vw;
         height: 100lvh;
-        background: #070913af;
-        -webkit-backdrop-filter: hue-rotate(20deg);
-        backdrop-filter: hue-rotate(20deg);
+        background: #0709138c;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         z-index: -1;
         transition: .25s all ease-in-out;
     }

@@ -18,3 +18,23 @@
     -webkit-filter: blur(10px);
             filter: blur(10px);
 }
+
+#success-popup{
+    position: fixed;
+    top: 100px;
+    right: 15px;
+    @include box();
+    display: none;
+    align-items: center;
+    width: max-content;
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px;
+    gap: 10px;
+    animation: .25s all entrance;
+    span{
+        border-left: 2px solid #ffffff96;
+        padding-left: 10px;
+        padding-top: 2px;
+    }
+}
