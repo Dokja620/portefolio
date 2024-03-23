@@ -1,54 +1,63 @@
-#portefolio[form-folio="0"]>*:not(.sector){
-    display: none;
-}
-#portefolio[form-folio="1"]>*:not(form){
+#portefolio[form-folio="0"]>*:not(.sector) {
     display: none;
 }
 
-form{
+#portefolio[form-folio="1"]>*:not(form) {
+    display: none;
+}
+
+form {
     @include box(#070913a2, 15px);
     position: relative;
     padding: 45px 10px 10px 10px;
     text-align: center;
     min-width: 402px;
-    .close{
+
+    .close {
         position: absolute;
         top: 10px;
         right: 10px;
         cursor: pointer;
         transition: .25s transform ease;
-        &:hover{
+
+        &:hover {
             transform: scale(1.1);
         }
     }
-    
-    .fields{
+
+    .fields {
         display: flex;
         gap: 5px;
         margin-bottom: 10px;
-    }    
-    .show, input{
+    }
+
+    .show,
+    input {
         border: 1px solid #707070;
         background: #070913a2;
         padding: 5px;
     }
-    .show{
+
+    .show {
         width: 75px;
         text-align: center;
         border-radius: 20px 10px 10px 20px;
     }
-    input{
+
+    input {
         width: 100%;
         color: #8695E4;
         border-radius: 10px 20px 20px 10px;
         @include outfit(300);
         letter-spacing: 1px;
         padding-left: 10px;
+
         &:focus {
             background: #070913a2;
         }
     }
-    textarea{
+
+    textarea {
         width: 100%;
         color: #8695E4;
         @include box(#070913a2, 15px);
@@ -57,21 +66,53 @@ form{
         @include outfit(300);
         letter-spacing: 1px;
     }
-    *::placeholder{
+
+    *::-webkit-input-placeholder {
         color: #8696e486;
         @include outfit(300);
         letter-spacing: 1px;
     }
-    input, textarea{
+
+    *::-moz-placeholder {
+        color: #8696e486;
+        @include outfit(300);
+        letter-spacing: 1px;
+    }
+
+    *:-ms-input-placeholder {
+        color: #8696e486;
+        @include outfit(300);
+        letter-spacing: 1px;
+    }
+
+    *::-ms-input-placeholder {
+        color: #8696e486;
+        @include outfit(300);
+        letter-spacing: 1px;
+    }
+
+    *::placeholder {
+        color: #8696e486;
+        @include outfit(300);
+        letter-spacing: 1px;
+    }
+
+    input,
+    textarea {
         outline: 1px solid #70707046;
-            outline-offset: -2px;
-            transition: .25s outline-offset ease-in-out;
-        &:hover, &:focus {
-                outline: 1px solid #70707046;
-                outline-offset: 2px;
+        outline-offset: -2px;
+        transition: .25s outline-offset ease-in-out;
+
+        &:hover,
+        &:focus {
+            outline: 1px solid #70707046;
+            outline-offset: 2px;
         }
     }
-    button{
+
+    button {
+        width: -webkit-max-content;
+        width: -moz-max-content;
         width: max-content;
         @include box(#070913a2, 20px);
         @include outfit(300);
@@ -82,9 +123,10 @@ form{
         margin-top: 5px;
         transition: .5s box-shadow ease-in-out;
         cursor: pointer;
-        &:hover, &:focus{
+
+        &:hover,
+        &:focus {
             box-shadow: #ffffff4f 0px 0px 12px;
         }
     }
 }
-

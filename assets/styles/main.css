@@ -2,6 +2,8 @@
 /* Typo */
 h1 {
   font-size: 2em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -43,6 +45,10 @@ p {
   font-style: normal;
 }
 
+a {
+  color: #fff;
+}
+
 /* Reset and main style */
 /* reset */
 * {
@@ -80,7 +86,7 @@ body[bg-index="3"]::after {
 }
 
 body[bg-index="4"] {
-  background: #000 url(../../assets/imgs/bg-proj/tour.webp) right/cover no-repeat fixed;
+  background: #000 url(../../assets/imgs/bg-proj/tour.webp) left/cover no-repeat fixed;
   height: 100lvh;
 }
 body[bg-index="4"]::after {
@@ -88,7 +94,7 @@ body[bg-index="4"]::after {
 }
 
 body[bg-index="5"] {
-  background: #000 url(../../assets/imgs/bg-proj/malala.webp) right/cover no-repeat fixed;
+  background: #000 url(../../assets/imgs/bg-proj/malala.webp) center/cover no-repeat fixed;
   height: 100lvh;
 }
 body[bg-index="5"]::after {
@@ -365,6 +371,10 @@ main section {
   border: none;
   padding: 10px 15px;
 }
+.toggled .more {
+  display: flex;
+  gap: 12px;
+}
 .toggled .btn {
   display: flex;
   align-items: center;
@@ -477,7 +487,8 @@ form .fields {
   gap: 5px;
   margin-bottom: 10px;
 }
-form .show, form input {
+form .show,
+form input {
   border: 1px solid #707070;
   background: rgba(7, 9, 19, 0.6352941176);
   padding: 5px;
@@ -517,6 +528,38 @@ form textarea {
   font-style: normal;
   letter-spacing: 1px;
 }
+form *::-webkit-input-placeholder {
+  color: rgba(134, 150, 228, 0.5254901961);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+form *::-moz-placeholder {
+  color: rgba(134, 150, 228, 0.5254901961);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+form *:-ms-input-placeholder {
+  color: rgba(134, 150, 228, 0.5254901961);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+form *::-ms-input-placeholder {
+  color: rgba(134, 150, 228, 0.5254901961);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 1px;
+}
 form *::placeholder {
   color: rgba(134, 150, 228, 0.5254901961);
   font-family: "Outfit", sans-serif;
@@ -525,16 +568,21 @@ form *::placeholder {
   font-style: normal;
   letter-spacing: 1px;
 }
-form input, form textarea {
+form input,
+form textarea {
   outline: 1px solid rgba(112, 112, 112, 0.2745098039);
   outline-offset: -2px;
   transition: 0.25s outline-offset ease-in-out;
 }
-form input:hover, form input:focus, form textarea:hover, form textarea:focus {
+form input:hover, form input:focus,
+form textarea:hover,
+form textarea:focus {
   outline: 1px solid rgba(112, 112, 112, 0.2745098039);
   outline-offset: 2px;
 }
 form button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   background: rgba(7, 9, 19, 0.6352941176);
   -webkit-backdrop-filter: blur(3px);
@@ -592,7 +640,7 @@ footer p {
   height: 35px;
   width: 35px;
   border-radius: 12px;
-  transition: 0.5s width ease-in-out 0.25s;
+  transition: 0.5s width ease-in-out 0.5s;
   cursor: pointer;
 }
 .social-media div a {
@@ -631,7 +679,7 @@ footer p {
 }
 
 #foot[data-active-index="0"] > .gmail {
-  width: 254px;
+  width: 260px;
 }
 
 #foot[data-active-index="1"] > .whatsapp {
@@ -647,59 +695,41 @@ footer p {
 }
 
 /* custom cursor */
-.js-cursor {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  height: 40px;
-  width: 40px;
-  margin: -20px 0 0 -20px;
-  mix-blend-mode: difference;
-  transition-duration: 0.4s;
-  transition-property: visibility, opacity;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-.js-cursor:before, .js-cursor:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  border-radius: 50%;
-}
-.js-cursor:before {
-  height: 8px;
-  width: 8px;
-  background: rgba(255, 255, 255, 0.8);
-}
-.js-cursor:after {
-  height: 20px;
-  width: 20px;
+.cursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transition-duration: 0.4s;
-  transition-property: border-color, background, transform;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: 4;
 }
-.js-cursor.is-active {
-  opacity: 1;
-  visibility: visible;
-  will-change: transform;
+
+.cursor2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  opacity: 0.3;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
 }
-.js-cursor.is-focus:after {
-  transform: translate3d(-50%, -50%, 0) scale(2);
-  border-color: transparent;
-  background: rgba(255, 255, 255, 0.2);
+
+.hover {
+  background-color: rgba(7, 9, 19, 0.5490196078);
+  opacity: 0.5;
 }
-.js-cursor.is-hidden {
-  visibility: hidden;
-  opacity: 0;
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
 }
 
 /* Responsive */
@@ -809,6 +839,20 @@ footer p {
   animation: 0.5s popup ease;
 }
 
+@-webkit-keyframes popup {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
 @keyframes popup {
   from {
     transform: translateX(50px);
@@ -1007,11 +1051,14 @@ footer p {
   border: 1px solid #707070;
   display: none;
   align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   border: none;
   border-radius: 0px;
   padding: 5px 10px;
   gap: 10px;
+  -webkit-animation: 0.25s all entrance;
   animation: 0.25s all entrance;
 }
 #success-popup span {

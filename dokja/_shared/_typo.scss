@@ -11,6 +11,8 @@
 /* Typo */
 h1 {
     font-size: 2em;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
 }
 
@@ -29,10 +31,14 @@ h3 {
     font-size: clamp(1.5em, 10vw, 2.5em);
 }
 
-h4{
+h4 {
     @include outfit(400);
 }
 
 p {
     @include outfit(300);
+}
+
+a{
+    color: #fff;
 }

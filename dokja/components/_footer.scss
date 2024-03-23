@@ -31,7 +31,7 @@ footer {
         height: 35px;
         width: 35px;
         border-radius: 12px;
-        transition: .5s width ease-in-out .25s;
+        transition: .5s width ease-in-out .5s;
         cursor: pointer;
 
         a {
@@ -77,7 +77,7 @@ footer {
 }
 
 #foot[data-active-index="0"]>.gmail {
-    width: 254px;
+    width: 260px;
 }
 
 #foot[data-active-index="1"]>.whatsapp {

@@ -16,23 +16,27 @@
     visibility: hidden;
     opacity: 0;
     -webkit-filter: blur(10px);
-            filter: blur(10px);
+    filter: blur(10px);
 }
 
-#success-popup{
+#success-popup {
     position: fixed;
     top: 100px;
     right: 15px;
     @include box();
     display: none;
     align-items: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     border: none;
     border-radius: 0px;
     padding: 5px 10px;
     gap: 10px;
+    -webkit-animation: .25s all entrance;
     animation: .25s all entrance;
-    span{
+
+    span {
         border-left: 2px solid #ffffff96;
         padding-left: 10px;
         padding-top: 2px;

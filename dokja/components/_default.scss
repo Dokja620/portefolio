@@ -37,7 +37,7 @@ body[bg-index="3"] {
 }
 
 body[bg-index="4"] {
-    background: #000 url(../../assets/imgs/bg-proj/tour.webp) right/cover no-repeat fixed;
+    background: #000 url(../../assets/imgs/bg-proj/tour.webp) left/cover no-repeat fixed;
     height: 100lvh;
 
     &::after {
@@ -46,7 +46,7 @@ body[bg-index="4"] {
 }
 
 body[bg-index="5"] {
-    background: #000 url(../../assets/imgs/bg-proj/malala.webp) right/cover no-repeat fixed;
+    background: #000 url(../../assets/imgs/bg-proj/malala.webp) center/cover no-repeat fixed;
     height: 100lvh;
 
     &::after {
