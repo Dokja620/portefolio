@@ -498,6 +498,9 @@ form input {
   letter-spacing: 1px;
   padding-left: 10px;
 }
+form input:focus {
+  background: rgba(7, 9, 19, 0.6352941176);
+}
 form textarea {
   width: 100%;
   color: #8695E4;
@@ -877,7 +880,7 @@ footer p {
   }
 }
 /* Form animation */
-#form {
+#contact-form {
   -webkit-animation: tilt-in-left-1 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: tilt-in-left-1 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

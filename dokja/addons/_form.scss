@@ -44,6 +44,9 @@ form{
         @include outfit(300);
         letter-spacing: 1px;
         padding-left: 10px;
+        &:focus {
+            background: #070913a2;
+        }
     }
     textarea{
         width: 100%;
