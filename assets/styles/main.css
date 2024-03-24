@@ -762,6 +762,10 @@ footer p {
   .container {
     max-width: 640px;
   }
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
 }
 /*sm*/
 @media (max-width: 640px) {
@@ -780,7 +784,7 @@ footer p {
   #content {
     width: 100%;
     min-width: 250px;
-    padding: 25px;
+    padding: 0 25px;
   }
   #content h1 {
     font-size: clamp(1.2em, 6.5vw, 1.9em);
@@ -790,12 +794,93 @@ footer p {
   }
   #content .use {
     flex-wrap: wrap;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+  #content .use div {
+    height: 35px;
   }
   #portefolio {
     width: 100%;
     padding: 0 20px;
     margin-bottom: 75px;
+  }
+  .want-more {
+    margin-bottom: 50px;
+  }
+  .want-more button,
+  .want-more a {
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+  }
+  main {
+    padding: 0;
+  }
+  header {
+    margin-bottom: 25px;
+  }
+  header .logo {
+    width: 55px;
+    height: 55px;
+  }
+  footer {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px 0;
+  }
+  footer p {
+    font-size: 0.8em;
+  }
+  .social-media {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 5px auto;
+  }
+  .social-media div {
+    width: 30px;
+    height: 30px;
+  }
+  .social-media div img {
+    width: 100%;
+  }
+  #foot[data-active-index="0"] > .gmail {
+    width: 30px;
+  }
+  #foot[data-active-index="1"] > .whatsapp {
+    width: 30px;
+  }
+  #foot[data-active-index="2"] > .linkedin {
+    width: 30px;
+  }
+  #foot[data-active-index="3"] > .github {
+    width: 30px;
+  }
+  #portefolio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    height: 100lvh;
+    width: 100vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  #portefolio .sector {
+    box-shadow: rgba(7, 9, 19, 0.5490196078) 0px 0px 10px, rgba(7, 9, 19, 0.7215686275) 0px 0px 20px, rgba(7, 9, 19, 0.7058823529) 0px 0px 30px, rgba(7, 9, 19, 0.8862745098) 0px 0px 40px;
+  }
+  #portefolio .sector span {
+    display: none;
+  }
+  .toggled {
+    margin: 0;
+    max-width: 100%;
+    min-width: 100px;
+  }
+  .toggled .btn {
+    min-width: max-content;
   }
 }
 /* Intro animation */
@@ -868,11 +953,6 @@ footer p {
   }
 }
 /* Logo animation */
-.logo {
-  -webkit-animation: roll-in-left 0.7s ease-out both 2.7s;
-  animation: roll-in-left 0.7s ease-out both 2.7s;
-}
-
 @-webkit-keyframes roll-in-left {
   0% {
     transform: translateX(-800px) rotate(-540deg);

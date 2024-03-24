@@ -30,6 +30,11 @@
     .container {
         max-width: 640px;
     }
+
+    .cursor,
+    .cursor2 {
+        display: none;
+    }
 }
 
 /*sm*/
@@ -54,7 +59,7 @@
     #content {
         width: 100%;
         min-width: 250px;
-        padding: 25px;
+        padding: 0 25px;
 
         h1 {
             font-size: clamp(1.2em, 6.5vw, 1.9em);
@@ -66,7 +71,12 @@
 
         .use {
             flex-wrap: wrap;
-            margin-bottom: 35px;
+            margin-bottom: 15px;
+            gap: 10px;
+
+            div {
+                height: 35px;
+            }
         }
     }
 
@@ -74,5 +84,104 @@
         width: 100%;
         padding: 0 20px;
         margin-bottom: 75px;
+    }
+
+    .want-more {
+        margin-bottom: 50px;
+
+        button,
+        a {
+            min-width: -webkit-max-content;
+            min-width: -moz-max-content;
+            min-width: max-content;
+        }
+    }
+
+    main {
+        padding: 0;
+    }
+
+
+    header {
+        margin-bottom: 25px;
+
+        .logo {
+            width: 55px;
+            height: 55px;
+        }
+    }
+
+    // footer
+    footer {
+        width: 100%;
+        margin: 10px auto;
+        padding: 5px 0;
+
+        p {
+            font-size: .8em;
+        }
+    }
+
+    .social-media {
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        margin: 5px auto;
+
+        div {
+            width: 30px;
+            height: 30px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    #foot[data-active-index="0"]>.gmail {
+        width: 30px;
+    }
+
+    #foot[data-active-index="1"]>.whatsapp {
+        width: 30px;
+    }
+
+    #foot[data-active-index="2"]>.linkedin {
+        width: 30px;
+    }
+
+    #foot[data-active-index="3"]>.github {
+        width: 30px;
+    }
+
+    #portefolio {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: transparent;
+        height: 100lvh;
+        width: 100vw;
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        .sector {
+            box-shadow: #0709138c 0px 0px 10px, #070913b8 0px 0px 20px, #070913b4 0px 0px 30px, #070913e2 0px 0px 40px;
+
+            span{
+                display: none;
+            }
+        }
+
+    }
+
+    // Projects
+    .toggled {
+        margin: 0;
+        max-width: 100%;
+        min-width: 100px;
+        .btn{
+            min-width: max-content;
+        }
     }
 }
